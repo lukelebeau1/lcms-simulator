@@ -13,7 +13,8 @@ import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 from plotly.subplots import make_subplots  # noqa: E402
 
-from common import (Station, follow_index, inputs, method_provenance, method_sources, page, provenance_table,  # noqa: E402
+import style  # noqa: E402
+from common import (chart, Station, follow_index, inputs, method_provenance, method_sources, page, provenance_table,  # noqa: E402
                     sources_line)
 
 from lcms_sim.faults.library import LIBRARY, Scenario  # noqa: E402
@@ -59,14 +60,15 @@ except ValueError as e:
 fig = make_subplots(specs=[[{"secondary_y": True}]])
 busy = sched.n_active > 0
 fig.add_trace(go.Scatter(x=sched.cycle_starts, y=sched.n_active, name="Concurrent transitions",
-                         line=dict(color="gray")), secondary_y=False)
+                         line=dict(color=style.LILAC)), secondary_y=False)
 fig.add_trace(go.Scatter(x=sched.cycle_starts, y=np.where(busy, sched.dwell_ms, np.nan), name="Dwell (ms)",
-                         line=dict(color="firebrick")), secondary_y=True)
+                         line=dict(color=style.SAFFRON)), secondary_y=True)
 fig.update_yaxes(title_text="Concurrent", secondary_y=False)
-fig.update_yaxes(title_text="Dwell (ms)", type="log", secondary_y=True)
-fig.update_layout(height=320, margin=dict(t=10, b=40), xaxis_title="Time (min)", template="plotly_white",
+fig.update_yaxes(title_text="Dwell (ms)", type="log", tickvals=[1, 2, 5, 10, 20, 50, 100, 200, 500, 1000],
+                 showgrid=False, secondary_y=True)
+fig.update_layout(height=320, margin=dict(t=10, b=40), xaxis_title="Time (min)", template="room",
                   legend=dict(orientation="h", y=1.12))
-st.plotly_chart(fig, width="stretch")
+chart(fig, width="stretch")
 sources_line(("agilent_5990_3595", "knoll_2010"),
              label="Sources (dynamic MRM shares the cycle; counting noise falls as 1 / sqrt N; the polarity-switch "
                    "overhead is a user setting)")
@@ -113,11 +115,11 @@ risky = df[df["Chance ratio outside +-30% (%)"] > 5]
 c4.metric("Ion ratios at risk (>5% fail)", f"{len(risky)} of {len(df)}")
 
 bar = go.Figure(go.Bar(x=df["Analyte"], y=df["Points across peak"], marker_color=np.where(
-    df["Points across peak"] < acq.min_points_per_peak, "firebrick", "steelblue")))
-bar.add_hline(y=acq.min_points_per_peak, line_dash="dash", line_color="gray")
+    df["Points across peak"] < acq.min_points_per_peak, style.SAFFRON, style.TEAL_LIGHT)))
+bar.add_hline(y=acq.min_points_per_peak, line_dash="dash", line_color=style.PALE)
 bar.update_layout(height=300, margin=dict(t=10, b=120), yaxis_title="Points across peak (4 sigma / cycle)",
-                  template="plotly_white")
-st.plotly_chart(bar, width="stretch")
+                  template="room")
+chart(bar, width="stretch")
 st.dataframe(df, hide_index=True, width="stretch", height=380)
 st.caption("Ion ratio RSD is the counting limit, sqrt(1/N_quant + 1/N_qual); real scatter is at least this. "
            "Concentrations are the stated fraction of each analyte's MN action limit, in flower.")
@@ -175,11 +177,11 @@ else:
             hovertemplate=f"{tr.analyte} {tr.role.value}<br>{tr.precursor_mz} > {tr.product_mz}<br>"
                           f"{x.start_ms:.1f}-{x.start_ms + x.dwell_ms:.1f} ms<extra></extra>"))
     for b, e in lay.switches_ms:
-        strip.add_trace(go.Bar(y=[""], x=[e - b], base=[b], orientation="h", marker_color="#444", showlegend=False,
+        strip.add_trace(go.Bar(y=[""], x=[e - b], base=[b], orientation="h", marker_color="#7A6690", showlegend=False,
                                hovertemplate="Polarity switch<extra></extra>"))
     strip.update_layout(height=150, margin=dict(t=10, b=40), xaxis_title="ms into the cycle",
-                        xaxis_range=[0, tc], barmode="overlay", template="plotly_white")
-    st.plotly_chart(strip, width="stretch")
+                        xaxis_range=[0, tc], barmode="overlay", template="room")
+    chart(strip, width="stretch")
 
     on = eluting(tr_cur.analyte)
     rate = ions_per_s(tr_cur.analyte, tr_cur.relative_response or 1.0) if on else 0.0
@@ -286,9 +288,9 @@ else:
         xfig = go.Figure(go.Bar(x=list(refs), y=list(vals), marker_color=bar_c,
                                 hovertemplate="%{x}: %{y:.3g} x the expected ratio<extra></extra>"))
         xfig.add_hrect(y0=0.7, y1=1.3, fillcolor="seagreen", opacity=0.12, line_width=0)
-        xfig.update_layout(height=320, margin=dict(t=10, b=60), template="plotly_white",
+        xfig.update_layout(height=320, margin=dict(t=10, b=60), template="room",
                            yaxis_title="Observed / expected ion ratio", yaxis_type="log")
-        st.plotly_chart(xfig, width="stretch")
+        chart(xfig, width="stretch")
         cal1 = dict(zip(refs, full_vals)).get(i.calibration_design[0].level)
         threshold = 0.30 / (cal1 - 1) if cal1 and cal1 > 1 else None
         n_fail = sum(1 for v in vals if abs(v - 1) > 0.30)

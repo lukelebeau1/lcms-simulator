@@ -18,7 +18,7 @@ import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 from plotly.subplots import make_subplots  # noqa: E402
 
-from common import (Station, follow_index, inputs, matrix_profile, method_provenance, page, plotly_spec,  # noqa: E402
+from common import (chart, Station, follow_index, inputs, matrix_profile, method_provenance, page, plotly_spec,  # noqa: E402
                     provenance_table, recipe, sources_line, targets)
 from ion_stream import (BACKGROUND_COLOUR, MATRIX_COLOUR, Q1_FWHM, Q1_PEAK, background_density,  # noqa: E402
                         background_in_window, population, q1_transmission)
@@ -708,9 +708,9 @@ else:
     sfig_s.update_yaxes(range=list(zy), row=1, col=2)
     sfig_s.add_shape(type="rect", xref="x", yref="y", x0=zx[0], x1=zx[1], y0=zy[0], y1=zy[1],
                      line=dict(color="crimson", width=1))
-    sfig_s.update_layout(height=420, margin=dict(t=40, b=60, l=10, r=10), template="plotly_white",
+    sfig_s.update_layout(height=420, margin=dict(t=40, b=60, l=10, r=10), template="room",
                          legend=dict(orientation="h", y=-0.18, x=0, font=dict(size=11)))
-    st.plotly_chart(sfig_s, width="stretch")
+    chart(sfig_s, width="stretch")
 
     v_amp = rf_amplitude_v(mz_set, q_mid)
     cs_ = st.columns(2) + st.columns(2)
@@ -798,7 +798,7 @@ else:
     moving = list(range(len(rfig.data)))
     rfig.update_xaxes(range=[-3.4, 3.4], visible=False)
     rfig.update_yaxes(range=[-3.4, 3.4], visible=False, scaleanchor="x", scaleratio=1)
-    rfig.update_layout(height=430, margin=dict(t=50, b=10, l=10, r=10), template="plotly_white")
+    rfig.update_layout(height=430, margin=dict(t=50, b=10, l=10, r=10), template="room")
     rspec = rfig.to_dict()
     ranim = [dict(name=str(k), data=frame_data(k), traces=moving) for k in range(len(cyc))]
     rspec["layout"]["updatemenus"] = [dict(
@@ -823,13 +823,13 @@ else:
         sfig2.update_yaxes(range=[-1.1, 1.1], title_text="off axis / gap", row=r_, col=1)
         sfig2.update_xaxes(range=[0, N_CYC], row=r_, col=1)
     sfig2.update_xaxes(title_text="RF cycles", row=2, col=1)
-    sfig2.update_layout(height=430, margin=dict(t=60, b=40, l=10, r=10), template="plotly_white",
+    sfig2.update_layout(height=430, margin=dict(t=60, b=40, l=10, r=10), template="room",
                         legend=dict(orientation="h", y=-0.25, x=0, font=dict(size=11)))
     col_a, col_b = st.columns([0.45, 0.55])
     with col_a:
         plotly_spec(rspec, width="stretch")
     with col_b:
-        st.plotly_chart(sfig2, width="stretch")
+        chart(sfig2, width="stretch")
     st.caption(f"The + pair carries +(U + V cos wt), the - pair -(U + V cos wt). U / V = {uv:.5f}, the setting at "
                f"q = {q_mid:.4f}. "
                "Red: rods positive at that instant; blue: negative (V is much larger than U, so each pair flips sign "
@@ -867,7 +867,7 @@ else:
                                  colorscale=[[0, "rgb(60,110,220)"], [0.5, "rgb(235,235,235)"], [1, "rgb(220,60,60)"]],
                                  showscale=False, hoverinfo="skip"))
     sfig3.update_layout(
-        height=420, margin=dict(t=40, b=0, l=0, r=0), template="plotly_white",
+        height=420, margin=dict(t=40, b=0, l=0, r=0), template="room",
         scene=dict(xaxis=dict(title="x (+ pair)", range=[-1, 1]), yaxis=dict(title="y (- pair)", range=[-1, 1]),
                    zaxis=dict(title="potential", range=[-zmax, zmax], showticklabels=False),
                    camera=dict(eye=dict(x=1.5, y=-1.5, z=0.9)), aspectmode="manual",
@@ -905,13 +905,13 @@ else:
     for r_ in (1, 2):
         efig.update_yaxes(title_text="strength", zeroline=True, row=r_, col=1)
     efig.update_xaxes(title_text="off axis / gap", row=2, col=1)
-    efig.update_layout(height=420, margin=dict(t=40, b=40, l=10, r=10), template="plotly_white",
+    efig.update_layout(height=420, margin=dict(t=40, b=40, l=10, r=10), template="room",
                        legend=dict(orientation="h", y=-0.3, x=0, font=dict(size=11)))
     ca, cb = st.columns([0.5, 0.5])
     with ca:
         plotly_spec(s3spec, width="stretch")
     with cb:
-        st.plotly_chart(efig, width="stretch")
+        chart(efig, width="stretch")
     verdict = {
         "DC + RF (Q1, Q3)": "Along y the RF's averaged bowl must beat the DC hill. The setting just manages (a shallow "
                             "bowl); the heavier ion feels the RF less and gets a hill, so it drifts out, as in the rods "

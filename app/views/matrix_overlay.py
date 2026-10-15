@@ -12,7 +12,7 @@ import pandas as pd  # noqa: E402
 import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from common import follow_index, inputs, matrix_profile, page, probe_links, sources_line, targets  # noqa: E402
+from common import chart, follow_index, inputs, matrix_profile, page, probe_links, sources_line, targets  # noqa: E402
 
 from lcms_sim.io.schemas import InfusionPoint  # noqa: E402
 from lcms_sim.lc.gradient import LCConditions  # noqa: E402
@@ -97,7 +97,7 @@ if h["IS"]:
 fig.update_layout(xaxis_title="retention time (min)", yaxis_title="matrix factor (1 = no effect)", height=460,
                   margin=dict(l=10, r=10, t=20, b=10), legend=dict(orientation="h"),
                   yaxis=dict(range=[0, max(1.2, float(np.nanmax(mf)) * 1.05)]))
-st.plotly_chart(fig, width="stretch")
+chart(fig, width="stretch")
 st.caption(f"Profile: {label}. Retention times from the method's LSS parameters (fitted to its measured retention times).")
 sources_line(("bonfiglio_1999", "matuszewski_2003", "king_2000", "stokvis_2005"),
              label="Sources (post-column infusion maps suppression against time; the matrix factor; suppression arises "

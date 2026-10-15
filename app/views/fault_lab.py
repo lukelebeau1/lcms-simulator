@@ -10,7 +10,7 @@ import pandas as pd  # noqa: E402
 import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from common import inputs, page, probe_links, seed_control, sources_line, targets  # noqa: E402
+from common import chart, inputs, page, probe_links, seed_control, sources_line, targets  # noqa: E402
 
 from lcms_sim.faults.library import LIBRARY, Scenario  # noqa: E402
 from lcms_sim.faults.matcher import load_sweep_table, sweep_magnitudes, tolerances  # noqa: E402
@@ -111,7 +111,7 @@ with c2:
     fig.update_layout(title="Reported / true against retention time", xaxis_title="RT (min)",
                       yaxis_title="reported / true", height=420, margin=dict(l=10, r=10, t=40, b=10),
                       legend=dict(orientation="h"))
-    st.plotly_chart(fig, width="stretch")
+    chart(fig, width="stretch")
     scope_note = ("the pattern across compounds is the diagnosis" if f.scope == "compound"
                   else "every compound moves together, as a dilution would")
     st.caption(f"{'Compound-specific' if f.scope == 'compound' else 'Uniform'}: {scope_note}.")

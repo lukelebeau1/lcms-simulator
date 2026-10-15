@@ -11,7 +11,7 @@ import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 from plotly.subplots import make_subplots  # noqa: E402
 
-from common import (Station, acceptance, follow_index, inputs, method, method_provenance, method_sources, page,  # noqa: E402
+from common import (chart, Station, acceptance, follow_index, inputs, method, method_provenance, method_sources, page,  # noqa: E402
                     provenance_table, seed_control, sources_line, targets)
 
 from lcms_sim.io.schemas import CalibrationModel, OriginHandling, TransitionRole, Weighting  # noqa: E402
@@ -84,7 +84,7 @@ fits = {k: fit_calibration(x, y, *v) for k, v in cfg.items()}
 grid = np.geomspace(x.min() * 0.8, x.max() * 1.1, 200) if log_axes else np.linspace(0, x.max() * 1.1, 200)
 
 fig = make_subplots(rows=1, cols=2, subplot_titles=("Response", "Back-calculated accuracy (%)"))
-fig.add_trace(go.Scatter(x=x, y=y, mode="markers", name="Injections", marker=dict(color="black", size=7)), 1, 1)
+fig.add_trace(go.Scatter(x=x, y=y, mode="markers", name="Injections", marker=dict(color="#F3ECDD", size=7)), 1, 1)
 colors = {"A": "steelblue", "B": "darkorange"}
 for k, f in fits.items():
     fig.add_trace(go.Scatter(x=grid, y=f.predict(grid), name=f"Fit {k}", line=dict(color=colors[k])), 1, 1)
@@ -100,8 +100,8 @@ axis_type = "log" if log_axes else "linear"
 fig.update_xaxes(type=axis_type, title_text="Vial concentration (ng/mL)", row=1, col=1)
 fig.update_yaxes(type=axis_type, title_text="Area", row=1, col=1)
 fig.update_xaxes(type=axis_type, title_text="Vial concentration (ng/mL)", row=1, col=2)
-fig.update_layout(height=420, template="plotly_white", margin=dict(t=40, b=40), legend=dict(orientation="h", y=-0.2))
-st.plotly_chart(fig, width="stretch")
+fig.update_layout(height=420, template="room", margin=dict(t=40, b=40), legend=dict(orientation="h", y=-0.2))
+chart(fig, width="stretch")
 
 cols = st.columns(2)
 for col, (k, f) in zip(cols, fits.items()):

@@ -23,6 +23,7 @@ from lcms_sim.quant.matrix import MatrixProfile, profile_from_traces  # noqa: E4
 from lcms_sim.references import markdown_cite  # noqa: E402
 from lcms_sim.rng import make_rng, new_seed  # noqa: E402
 from lcms_sim.trace import STATIONS, Station, Trace, build_trace  # noqa: E402
+import style  # noqa: E402  (registers the chart template; page() puts the CSS in)
 
 PROVENANCE_ICON = {"measured": "measured", "fitted": "fitted", "assumed": "assumed"}
 
@@ -93,6 +94,7 @@ def matrix_profile() -> MatrixProfile:
 def page(title: str, what: str, station: Station | None = None, show_rail: bool = True) -> None:
     """Title, the simulated warning, the intro, and the rail with this page's station marked."""
     st.set_page_config(page_title=title, layout="wide")
+    style.apply()
     st.title(title)
     st.warning("SIMULATED. Not validated for reporting. For learning and planning experiments only.", icon=None)
     st.caption(what)
@@ -180,7 +182,18 @@ def plotly_spec(spec: dict, **kwargs) -> None:
     plain dict property by property; either costs over a second for the animated views. The specs
     built here come from validated figures plus plain frame data, so both steps are skipped.
     """
-    st.plotly_chart(_BuiltFigure(spec), **kwargs)
+    layout = spec.setdefault("layout", {})
+    for k in ("paper_bgcolor", "plot_bgcolor"):
+        layout.setdefault(k, style.SCREEN)
+    st.plotly_chart(_BuiltFigure(spec), theme=None, **kwargs)
+
+
+def chart(fig: go.Figure, **kwargs) -> None:
+    """st.plotly_chart on a screen: the room template, and the background set on the figure itself, because
+    Streamlit fills in any background the layout leaves unset from the page theme (the template's is ignored)."""
+    fig.update_layout(paper_bgcolor=fig.layout.paper_bgcolor or style.SCREEN,
+                      plot_bgcolor=fig.layout.plot_bgcolor or style.SCREEN)
+    st.plotly_chart(fig, theme=None, **kwargs)
 
 
 # ---------------------------------------------------------------------------
@@ -297,10 +310,10 @@ def rail(here: Station | None = None) -> Trace | None:
         return None
     inj, cmp = t.injection.removeprefix("Column: "), t.compound
     last = {s.station: s for s in t.stops}
-    for col, station in zip(st.columns(len(STATIONS)), STATIONS):
+    for col, station in zip(st.container(key="rail").columns(len(STATIONS)), STATIONS):
+        col = col.container(key="rail-here" if station is here else f"rail-{station.value}")   # style.py lights it
         s = last.get(station)
-        name = station.value.capitalize()
-        head = f"**{name}**" if station is here else name
+        head = f"**{station.value.capitalize()}**"
         if s is None:
             col.markdown(f"{head}  \n-")
             continue

@@ -14,7 +14,7 @@ from plotly.subplots import make_subplots  # noqa: E402
 
 import c18_scene  # noqa: E402
 import molecules  # noqa: E402
-from common import (Station, follow_index, inputs, method, method_provenance, page, plotly_spec,  # noqa: E402
+from common import (chart, Station, follow_index, inputs, method, method_provenance, page, plotly_spec,  # noqa: E402
                     provenance_table, sources_line)
 
 from lcms_sim.lc.column import band_sigma_fraction, band_trajectory, phi_in_column  # noqa: E402
@@ -110,7 +110,7 @@ def build(with_is: bool, focus: str, step: float) -> tuple[dict, list[dict]]:
 
     fig.update_layout(
         title=dict(text=title0, font=dict(size=13), x=0.0, y=0.995, yanchor="top"),
-        height=max(560, 15 * len(names) + 260), margin=dict(t=95, b=120), template="plotly_white",
+        height=max(560, 15 * len(names) + 260), margin=dict(t=95, b=120), template="room",
         legend=dict(orientation="h", y=1.0, x=1.0, xanchor="right", yanchor="bottom"),
     )
     fig.add_vline(x=L, line_dash="dash", line_color="gray")
@@ -246,8 +246,8 @@ for nm, colr in ((pick_a, "crimson"), (pick_b, "royalblue")):
                                 text=[nm], textposition="top center", marker=dict(color=colr, size=12), name=nm))
 fr.update_xaxes(title_text="XLogP3 (hydrophobicity)")
 fr.update_yaxes(title_text=f"measured RT (min), {method().short}")
-fr.update_layout(height=340, margin=dict(t=20, b=40, l=10, r=10), template="plotly_white", showlegend=False)
-st.plotly_chart(fr, width="stretch")
+fr.update_layout(height=340, margin=dict(t=20, b=40, l=10, r=10), template="room", showlegend=False)
+chart(fr, width="stretch")
 st.caption("More hydrophobic, later: the main trend. Off the trend: bases charged at pH 3 elute early (imazalil, "
            "spinosyns), very large molecules late (avermectins), and log P estimates have their own errors "
            "(docs/retention_chemistry.md, docs/lc.md).")
@@ -341,7 +341,7 @@ if mode != "One moment":
     fs.update_yaxes(title_text="%B", range=[0, 100], secondary_y=False)
     fs.update_yaxes(title_text="held (%)", range=[0, 100.5], secondary_y=True)
     fs.update_layout(height=280, margin=dict(t=20, b=40, l=10, r=10), legend=dict(orientation="h", y=-0.3))
-    st.plotly_chart(fs, width="stretch")
+    chart(fs, width="stretch")
     st.caption("Held about 100% of the time while the %B is low: the band waits at the column head. As the gradient "
                "reaches it, k falls, the molecule spends more and more time in the mobile phase, and the band "
                "accelerates out (dotted lines: elution).")

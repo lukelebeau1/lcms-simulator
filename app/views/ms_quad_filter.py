@@ -13,7 +13,7 @@ import streamlit as st  # noqa: E402
 from plotly.subplots import make_subplots  # noqa: E402
 
 from collision_cell import KB, T_GAS, Cell, simulate  # noqa: E402
-from common import Station, inputs, page, plotly_spec, sources_line  # noqa: E402
+from common import chart, Station, inputs, page, plotly_spec, sources_line  # noqa: E402
 from lcms_sim.rng import make_rng  # noqa: E402
 from quad_stability import (APEX_RATIO, E_CHARGE, Q_END, a0, b1, effective_a, mathieu_aq, paths,  # noqa: E402
                             ratio_for_width, rf_amplitude_v, segment, slow_swing_cycles,
@@ -79,10 +79,10 @@ if show_f:
                             hoverinfo="skip", showlegend=False))
 f1.update_xaxes(visible=False, range=[-2.35, 2.35])
 f1.update_yaxes(visible=False, range=[-2.35, 2.35], scaleanchor="x", scaleratio=1)
-f1.update_layout(height=470, margin=dict(t=10, b=10, l=10, r=10), template="plotly_white")
+f1.update_layout(height=470, margin=dict(t=10, b=10, l=10, r=10), template="room")
 c1, c2 = st.columns([0.55, 0.45])
 with c1:
-    st.plotly_chart(f1, width="stretch")
+    chart(f1, width="stretch")
 with c2:
     st.markdown({
         "+ pair only": """
@@ -203,7 +203,7 @@ ef.add_trace(go.Scatter(x=[x for x, _ in ROD_XY1] + [-3.3], y=[y for _, y in ROD
                         textposition=["middle center"] * 4 + ["bottom right"], showlegend=False, hoverinfo="skip"))
 ef.update_xaxes(range=[-3.4, 3.4], visible=False)
 ef.update_yaxes(range=[-3.4, 3.4], visible=False, scaleanchor="x", scaleratio=1)
-ef.update_layout(height=430, margin=dict(t=50, b=10, l=10, r=10), template="plotly_white")
+ef.update_layout(height=430, margin=dict(t=50, b=10, l=10, r=10), template="room")
 espec = ef.to_dict()
 eanim = [dict(name=str(k), data=ion_frame(k), traces=[0, 1]) for k in ks]
 espec["layout"]["updatemenus"] = [dict(
@@ -223,20 +223,20 @@ for r_, key in ((1, "x"), (2, "y")):
                             line=dict(color="seagreen", width=1), name="every flip", showlegend=r_ == 1),
                  row=r_, col=1)
     tf.add_trace(go.Scatter(x=cyc1[::PER1].tolist(), y=np.round(P1[key][::PER1], 3).tolist(), mode="markers",
-                            marker=dict(color="#222", size=4), name="once per cycle: the slow swing",
+                            marker=dict(color="#F3ECDD", size=4), name="once per cycle: the slow swing",
                             showlegend=r_ == 1), row=r_, col=1)
     tf.add_hrect(y0=1.0, y1=1.1, fillcolor="#888", line_width=0, row=r_, col=1)
     tf.add_hrect(y0=-1.1, y1=-1.0, fillcolor="#888", line_width=0, row=r_, col=1)
     tf.update_yaxes(range=[-1.1, 1.1], title_text="off axis / gap", row=r_, col=1)
     tf.update_xaxes(range=[0, n1], row=r_, col=1)
 tf.update_xaxes(title_text="RF cycles", row=2, col=1)
-tf.update_layout(height=430, margin=dict(t=60, b=40, l=10, r=10), template="plotly_white",
+tf.update_layout(height=430, margin=dict(t=60, b=40, l=10, r=10), template="room",
                  legend=dict(orientation="h", y=-0.25, x=0, font=dict(size=11)))
 ea, eb = st.columns([0.45, 0.55])
 with ea:
     plotly_spec(espec, width="stretch")
 with eb:
-    st.plotly_chart(tf, width="stretch")
+    chart(tf, width="stretch")
 
 # Where the knobs put it: every knob only moves one dot on the stability diagram.
 qd, txt = st.columns([0.45, 0.55])
@@ -252,8 +252,8 @@ with qd:
                             name="this ion"))
     sd.update_xaxes(title_text="q (from the RF)", range=[0, 1.45])
     sd.update_yaxes(title_text="a (from the DC)", range=[0, 0.42])
-    sd.update_layout(height=300, margin=dict(t=20, b=40, l=10, r=10), template="plotly_white", showlegend=False)
-    st.plotly_chart(sd, width="stretch")
+    sd.update_layout(height=300, margin=dict(t=20, b=40, l=10, r=10), template="room", showlegend=False)
+    chart(sd, width="stretch")
 with txt:
     sw = [f"{s_:.0f} cycles" if s_ else "not held" for s_ in (P1["swing_x"], P1["swing_y"])]
     mm = st.columns(3)
@@ -340,17 +340,17 @@ def contest_fig(m_lo: float, m_hi: float, title: str, y_range: list | None = Non
     f.update_yaxes(title_text="volts", range=y_range or [0, max(top, U) * 1.15])
     f.update_xaxes(title_text="ion m/z")
     f.update_layout(title=dict(text=title, font=dict(size=13)), height=330, margin=dict(t=40, b=40, l=10, r=10),
-                    template="plotly_white", legend=dict(orientation="h", y=-0.3, x=0, font=dict(size=11)))
+                    template="room", legend=dict(orientation="h", y=-0.3, x=0, font=dict(size=11)))
     return f
 
 
 m_min = mz_set * q_set / 0.95                       # lighter than this is far past the shake-out limit
 cw1, cw2 = st.columns(2)
 with cw1:
-    st.plotly_chart(contest_fig(m_min, 4 * mz_set, "Wide view"), width="stretch")
+    chart(contest_fig(m_min, 4 * mz_set, "Wide view"), width="stretch")
 with cw2:
     yz = [0.985 * U, 1.015 * U] if U > 0 else None          # tight around the DC line, where the edges are
-    st.plotly_chart(contest_fig(mz_set - 2.0, mz_set + 2.0, f"Zoomed on m/z {mz_set:g}", yz), width="stretch")
+    chart(contest_fig(mz_set - 2.0, mz_set + 2.0, f"Zoomed on m/z {mz_set:g}", yz), width="stretch")
 mc = st.columns(2) + st.columns(2)
 mc[0].metric("Passes", f"{lo:.1f}-{hi:.1f}" if hi - lo < 50 else f"above {lo:.0f}" if math.isinf(hi)
              else f"{lo:.0f}-{hi:.0f}")
@@ -391,8 +391,8 @@ for col, key in ((1, "x"), (2, "y")):
     f3.add_hrect(y0=-1.15, y1=-1.0, fillcolor="#888", line_width=0, row=1, col=col)
     f3.update_yaxes(range=[-1.15, 1.15], title_text="off axis / gap" if col == 1 else None, row=1, col=col)
     f3.update_xaxes(title_text="RF cycles", range=[0, 80], row=1, col=col)
-f3.update_layout(height=300, margin=dict(t=40, b=40, l=10, r=10), template="plotly_white")
-st.plotly_chart(f3, width="stretch")
+f3.update_layout(height=300, margin=dict(t=40, b=40, l=10, r=10), template="room")
+chart(f3, width="stretch")
 st.caption("Paths computed for these voltages (Mathieu equation), each ion starting 1% of the gap off axis. "
            "The ion path page's Q1 close-up has the full detail: stability diagram, rods and saddle.")
 sources_line(("paul_steinwedel_1953", "dawson_1995"))
@@ -481,14 +481,14 @@ if tt.size:
                             name=f"fragment m/z {prod5:g}"))
     sv.add_trace(go.Scatter(x=c0[2]["x"], y=c0[2]["y"], mode="markers", marker=c0[2]["marker"], showlegend=False))
     sv.add_trace(go.Scatter(x=c0[3]["x"], y=c0[3]["y"], mode="markers", name="collision",
-                            marker=dict(symbol="x", size=7, color="#444")))
+                            marker=dict(symbol="x", size=7, color="#F3ECDD")))
     sv.add_trace(go.Scatter(x=[0.0], y=[1.32], mode="text", text=c0[4]["text"], textposition="middle right",
                             showlegend=False, textfont=dict(size=11, color="#888")))
     sv.add_hrect(y0=1.0, y1=1.18, fillcolor="#888", line_width=0)
     sv.add_hrect(y0=-1.18, y1=-1.0, fillcolor="#888", line_width=0)
     sv.update_xaxes(title_text="along the cell (entrance 0, exit 1)", range=[-0.02, 1.02])
     sv.update_yaxes(title_text="toward the + rods / gap", range=[-1.2, 1.4])
-    sv.update_layout(height=380, margin=dict(t=50, b=40, l=10, r=10), template="plotly_white",
+    sv.update_layout(height=380, margin=dict(t=50, b=40, l=10, r=10), template="room",
                      legend=dict(orientation="h", y=-0.25, x=0, font=dict(size=11)))
     svspec = sv.to_dict()
     svanim = [dict(name=str(k), data=cell_frame(int(k)), traces=[0, 1, 2, 3, 4]) for k in fidx]
@@ -506,12 +506,12 @@ if tt.size:
                         subplot_titles=("Energy (eV, log scale)", "Distance off axis / gap"))
     tus = tt * 1e6
     ef5.add_trace(go.Scatter(x=tus[keep].tolist(), y=np.clip(F5["ke_ev"][keep], 1e-3, None).tolist(), mode="lines",
-                             line=dict(color="#555", width=1), showlegend=False), row=1, col=1)
+                             line=dict(color="#7A6690", width=1), showlegend=False), row=1, col=1)
     ef5.add_hline(y=1.5 * KB * T_GAS / E_CHARGE, line=dict(color="#aaa", dash="dot"), row=1, col=1,
                   annotation_text="room-temperature gas", annotation_position="bottom right")
     r_ = np.hypot(F5["x"], F5["y"])
     ef5.add_trace(go.Scatter(x=tus[keep].tolist(), y=r_[keep].round(4).tolist(), mode="lines",
-                             line=dict(color="#555", width=1), showlegend=False), row=1, col=2)
+                             line=dict(color="#7A6690", width=1), showlegend=False), row=1, col=2)
     ef5.add_hrect(y0=1.0, y1=1.1, fillcolor="#888", line_width=0, row=1, col=2)
     if broke5:
         tb = float(tus[np.argmax(F5["prod"])])
@@ -520,8 +520,8 @@ if tt.size:
     ef5.update_yaxes(type="log", row=1, col=1)
     ef5.update_yaxes(range=[0, 1.1], row=1, col=2)
     ef5.update_xaxes(title_text="µs in the cell")
-    ef5.update_layout(height=300, margin=dict(t=40, b=40, l=10, r=10), template="plotly_white")
-    st.plotly_chart(ef5, width="stretch")
+    ef5.update_layout(height=300, margin=dict(t=40, b=40, l=10, r=10), template="room")
+    chart(ef5, width="stretch")
     st.caption("Green dashed line: the moment it breaks. Each collision with N2 takes a share of the energy: a lot "
                "for a light ion, little for a heavy one. After enough of them the ion is as slow as the gas.")
 

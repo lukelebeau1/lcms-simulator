@@ -11,7 +11,7 @@ import pandas as pd  # noqa: E402
 import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from common import Station, inputs, method_provenance, page, provenance_table, sources_line, targets  # noqa: E402
+from common import chart, Station, inputs, method_provenance, page, provenance_table, sources_line, targets  # noqa: E402
 
 from lcms_sim.faults.library import LIBRARY, Scenario  # noqa: E402
 from lcms_sim.io.schemas import TransitionRole  # noqa: E402
@@ -76,9 +76,9 @@ fig.add_trace(go.Scatter(x=t, y=trace(peaks1), name="Now", line=dict(width=1.2))
 pb = cond.phi_inlet(t) * 100
 fig.add_trace(go.Scatter(x=t, y=pb, name="%B at column", yaxis="y2", line=dict(dash="dot", color="gray")))
 fig.update_layout(height=430, margin=dict(t=10, b=40), xaxis_title="Time (min)", yaxis_title="Peaks (equal height)",
-                  yaxis2=dict(overlaying="y", side="right", range=[0, 105], title="%B"), template="plotly_white",
+                  yaxis2=dict(overlaying="y", side="right", range=[0, 105], title="%B"), template="room",
                   legend=dict(orientation="h", y=1.08))
-st.plotly_chart(fig, width="stretch")
+chart(fig, width="stretch")
 sources_line(("snyder_dolan_2007", "snyder_kirkland_dolan_2010", "dolan_2006_dwell", "horvath_1977", "agilent_5990_3595"),
              label="Sources (LSS retention and the gradient delay; peak width; dwell volume shifts; ionisable retention, "
                    "the 1.5 log unit shift of the ionised form assumed; dMRM windows clip what drifts out)")

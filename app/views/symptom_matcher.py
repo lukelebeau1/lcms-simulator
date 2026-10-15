@@ -10,7 +10,7 @@ import pandas as pd  # noqa: E402
 import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from common import page, probe_links  # noqa: E402
+from common import chart, page, probe_links  # noqa: E402
 
 from lcms_sim.references import markdown_cite  # noqa: E402
 
@@ -115,7 +115,7 @@ for m in top:
 fig.add_hrect(y0=-1, y1=1, fillcolor="#4caf50", opacity=0.12, line_width=0)
 fig.update_layout(barmode="group", yaxis_title="(simulated - observed) / tolerance", height=380,
                   margin=dict(l=10, r=10, t=20, b=10), legend=dict(orientation="h"))
-st.plotly_chart(fig, width="stretch")
+chart(fig, width="stretch")
 st.caption("Inside the green band the feature fits within tolerance. A bar far outside it is the feature that rules the fault out.")
 
 # --- the separating experiment --------------------------------------------------------------------------------

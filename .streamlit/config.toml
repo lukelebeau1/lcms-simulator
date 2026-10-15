@@ -4,3 +4,32 @@ headless = true
 
 [browser]
 gatherUsageStats = false
+
+# The control-room look (docs/design.md): sand panels, violet-black ink, deep violet for pressed controls,
+# saffron for labels and attention. Chart screens and the page CSS are in app/style.py.
+[theme]
+base = "light"
+primaryColor = "#574066"
+backgroundColor = "#E7DFD0"
+secondaryBackgroundColor = "#DED4C2"
+textColor = "#2E2433"
+linkColor = "#574066"
+borderColor = "#A89C86"
+dataframeBorderColor = "#A89C86"
+dataframeHeaderBackgroundColor = "#DED4C2"
+showWidgetBorder = true
+baseRadius = "none"
+buttonRadius = "none"
+font = "PT Sans Narrow:https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
+headingFont = "PT Sans Narrow:https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
+codeFont = "PT Mono:https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+baseFontSize = 16
+yellowBackgroundColor = "#F3DFA8"
+yellowTextColor = "#2E2433"
+orangeTextColor = "#8A5A00"
+redTextColor = "#8A5A00"
+chartCategoricalColors = ["#574066", "#D9A441", "#3F8A8C", "#BA9DDB", "#2E2433"]
+
+[theme.sidebar]
+backgroundColor = "#CDC4B6"
+secondaryBackgroundColor = "#E2D9C8"

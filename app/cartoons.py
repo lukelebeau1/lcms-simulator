@@ -30,7 +30,7 @@ def dots_for(amount: float) -> int:
 
 
 def _frame(body: str, caption: str = "") -> str:
-    cap = (f'<text x="{W / 2}" y="{H - 4}" font-size="10" fill="#c9d1d9" text-anchor="middle" '
+    cap = (f'<text x="{W / 2}" y="{H - 4}" font-size="10" fill="#2E2433" text-anchor="middle" '
            f'font-family="sans-serif">{caption}</text>') if caption else ""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">'
             f"{body}{cap}</svg>")
@@ -77,7 +77,7 @@ def stage(kind: str, n_dots: int, colour: str, caption: str = "", band: float = 
         bx = 20 + 110 * min(max(band, 0.0), 1.0)
         body = (f'<rect x="15" y="45" width="120" height="30" rx="6" fill="#2b2f36" stroke="{GLASS}" stroke-width="2"/>'
                 f'<rect x="{bx - 8:.1f}" y="47" width="16" height="26" fill="{colour}" opacity="0.35"/>'
-                f'<text x="75" y="35" font-size="9" fill="#8b949e" text-anchor="middle" font-family="sans-serif">flow</text>'
+                f'<text x="75" y="35" font-size="9" fill="#5C5262" text-anchor="middle" font-family="sans-serif">flow</text>'
                 f'<path d="M30 30 h90" stroke="#8b949e" stroke-width="1" marker-end="url(#a)"/>')
         return _frame(body + _dots(n_dots, bx - 7, 49, 14, 22, colour, 2.0), caption)
     if kind == "spray":
@@ -88,7 +88,7 @@ def stage(kind: str, n_dots: int, colour: str, caption: str = "", band: float = 
         return _frame(body + _dots(n_dots, 60, 30, 75, 60, colour, 2.0), caption)
     if kind == "capillary":
         body = (f'<rect x="10" y="50" width="130" height="20" rx="10" fill="none" stroke="{GLASS}" stroke-width="2"/>'
-                f'<text x="75" y="40" font-size="9" fill="#8b949e" text-anchor="middle" font-family="sans-serif">heated, '
+                f'<text x="75" y="40" font-size="9" fill="#5C5262" text-anchor="middle" font-family="sans-serif">heated, '
                 f'voltage</text>')
         return _frame(body + _dots(n_dots, 15, 54, 120, 12, colour, 2.0), caption)
     if kind in ("q1", "q3", "cell"):
@@ -96,13 +96,13 @@ def stage(kind: str, n_dots: int, colour: str, caption: str = "", band: float = 
         extra = (f'<rect x="15" y="25" width="120" height="70" fill="none" stroke="{GAS}" stroke-dasharray="4 3"/>'
                  + _dots(14, 22, 42, 106, 36, GAS, 1.4)) if kind == "cell" else ""
         label = {"q1": "RF + DC: one m/z passes", "q3": "RF + DC: one m/z passes", "cell": "RF only, N2"}[kind]
-        body = (rods + extra + f'<text x="75" y="18" font-size="9" fill="#8b949e" text-anchor="middle" '
+        body = (rods + extra + f'<text x="75" y="18" font-size="9" fill="#5C5262" text-anchor="middle" '
                 f'font-family="sans-serif">{label}</text>')
         return _frame(body + _dots(n_dots, 22, 44, 106, 32, colour, 2.0), caption)
     if kind == "multiplier":
         body = (f'<path d="M20 40 L70 55 L20 70 Z" fill="#555"/>'
                 f'<path d="M72 55 L135 30 M72 55 L135 80 M72 55 L135 55" stroke="{colour}" stroke-width="1.5"/>'
-                f'<text x="75" y="100" font-size="9" fill="#8b949e" text-anchor="middle" font-family="sans-serif">'
+                f'<text x="75" y="100" font-size="9" fill="#5C5262" text-anchor="middle" font-family="sans-serif">'
                 f'one ion in, a cascade out</text>')
         return _frame(body + _dots(n_dots, 10, 45, 55, 20, colour, 2.0), caption)
     if kind == "counting":
