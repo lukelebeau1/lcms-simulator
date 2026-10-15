@@ -1,0 +1,47 @@
+# What this input set is and where each input comes from.
+name: Agilent application note 5994-1734EN on the Minnesota OCM list
+short: the application note method (Agilent 5994-1734EN)
+description: 'Pesticides and mycotoxins in cannabis flower on a 1260 Infinity II LC
+  and an Ultivo triple quadrupole: transitions, retention times, column, gradient
+  and sample preparation from Agilent''s published application note, restricted to
+  the Minnesota OCM list. Internal standards, calibration and QC levels are assumed
+  (the note gives none).'
+sources:
+- agilent_5994_1734en
+- mn_ocm_cta_v2
+provenance:
+- input: Column
+  value: Poroshell 120 Phenyl-Hexyl 100 x 3.0 mm, 2.7 um, 55 C
+  provenance: measured
+- input: Transitions, retention times and windows
+  value: application note, Appendix A (Ultivo)
+  provenance: measured
+- input: Gradient and flow
+  value: application note, 0.5 mL/min, 13 min
+  provenance: measured
+- input: Dwell volume
+  value: 0.6 mL
+  provenance: assumed
+- input: Retention parameters (log kw)
+  value: fitted to the note's retention times; S from molecular weight
+  provenance: fitted
+- input: Cycle, delay, polarity switch
+  value: 500 ms cycle; delay and switch of an Ultivo
+  provenance: assumed
+- input: Detector gain, response factors, ion ratios
+  value: placeholders
+  provenance: assumed
+- input: Sample preparation
+  value: 1 g, 25 mL, 50 uL in 500 uL (250-fold), as in the note
+  provenance: measured
+- input: Internal standards
+  value: 9 labelled analogues, 10 ng/mL in the vial (the note uses none)
+  provenance: assumed
+- input: Calibration and QC levels
+  value: 0.1-100 ng/mL in the vial; QCs at the note's 60 / 4 ppb recovery spike and
+    three more
+  provenance: assumed
+- input: Matrix profile
+  value: synthetic
+  provenance: assumed
+remarks: {}

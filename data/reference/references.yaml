@@ -1,0 +1,729 @@
+# The reference registry: every source the simulator's claims cite, one entry per key.
+# A claim cites keys (Factor.sources, Fault.sources, checks.yaml sources, the docs' [key] marks, references.CLAIMS).
+# `verified` says how and when each entry was checked (DOI resolved, ISBN on the publisher's page, document text
+# read). An entry without a DOI, ISBN or URL is not allowed (tests/test_references.py). Claims with no source stay
+# labelled "assumed" rather than get a weak citation.
+references:
+
+  # --- liquid chromatography ---------------------------------------------------------------------------------
+  - key: snyder_dolan_2007
+    kind: book
+    authors: Snyder LR, Dolan JW
+    title: "High-Performance Gradient Elution: The Practical Application of the Linear-Solvent-Strength Model"
+    source: Wiley-Interscience, Hoboken NJ
+    year: 2007
+    isbn: 978-0-471-70646-5
+    verified: "2026-10-11: ISBN on the publisher's catalogue page"
+    note: The LSS model, gradient retention and its closed form, dwell volume, gradient compression, the S ~ 0.25 MW^0.5 estimate.
+
+  - key: snyder_kirkland_dolan_2010
+    kind: book
+    authors: Snyder LR, Kirkland JJ, Dolan JW
+    title: Introduction to Modern Liquid Chromatography
+    source: 3rd ed., Wiley, Hoboken NJ
+    year: 2010
+    isbn: 978-0-470-16754-0
+    verified: "2026-10-11: ISBN on the publisher's catalogue page"
+    note: Plate number and peak width, extra-column broadening, retention of ionisable compounds, reversed-phase retention and hydrophobicity.
+
+  - key: horvath_1977
+    kind: article
+    authors: Horváth C, Melander W, Molnár I
+    title: Liquid chromatography of ionogenic substances with nonpolar stationary phases
+    source: Analytical Chemistry
+    year: 1977
+    volume: "49(1)"
+    pages: 142-154
+    doi: 10.1021/ac50009a044
+    verified: "2026-10-11: DOI from Crossref"
+    note: Retention of an acid or base as the ionisation-weighted sum of the neutral and ionised forms' retention.
+
+  - key: dolan_2006_dwell
+    kind: article
+    authors: Dolan JW
+    title: Dwell Volume Revisited
+    source: LCGC North America, LC Troubleshooting column
+    year: 2006
+    url: https://www.chromatographyonline.com/view/dwell-volume-revisited-0
+    verified: "2026-10-11: article page located; summary read through secondary sources"
+    note: Dwell time = dwell volume / flow; peaks shift by the dwell-time difference between systems, early peaks less because they migrate during the isocratic hold.
+
+  - key: dolan_2006_carryover
+    kind: article
+    authors: Dolan JW
+    title: Autosampler Carryover
+    source: LCGC North America 24(8), LC Troubleshooting column
+    year: 2006
+    url: https://www.chromatographyonline.com/view/autosampler-carryover-2
+    verified: "2026-10-11: article page read: carryover seen in a blank injected after a high concentration; residue on the needle, valve surfaces"
+    note: What carries over, where it sits (needle, valve, loop), and the blank-after-high-standard test.
+
+  # --- MS acquisition and detection --------------------------------------------------------------------------
+  - key: agilent_5990_3595
+    kind: technical note
+    authors: Agilent Technologies
+    cite_as: Agilent 5990-3595EN
+    title: New Dynamic MRM Mode Improves Data Quality and Triple Quad Quantification in Complex Analyses
+    source: Agilent Technologies technical overview 5990-3595EN
+    year: 2009
+    url: https://www.agilent.com/Library/technicaloverviews/Public/5990-3595en_lo%20CMS.pdf
+    verified: "2026-10-11: title and content located in the Agilent library (dwell adjusted to keep a constant cycle; transitions switched on within their delta RT window); year from the publication series, not confirmed on the page"
+    note: Dynamic MRM, dwell = cycle / concurrent transitions, retention-time windows, even sampling across the peak.
+
+  - key: waters_720001168
+    kind: technical note
+    authors: Waters Corporation
+    cite_as: Waters 720001168
+    title: Waters application note 720001168
+    source: Waters Corporation
+    year: 2005
+    url: https://www.waters.com/content/dam/waters/en/app-notes/2005/720001168/720001168-en.pdf
+    verified: "2026-10-11: document located; states that reproducible quantification needs no fewer than 15 data points across a peak"
+    note: The 15-points-per-peak convention.
+
+  - key: zeng_2023
+    kind: article
+    authors: Zeng W, Bateman KP
+    title: "Quantitative LC-MS/MS. 1. Impact of Points across a Peak on the Accuracy and Precision of Peak Area Measurements"
+    source: Journal of the American Society for Mass Spectrometry
+    year: 2023
+    volume: "34"
+    pages: 1136-1144
+    doi: 10.1021/jasms.3c00077
+    verified: "2026-10-11: DOI from Crossref"
+    note: Seven points across a peak gave areas within 1% for peaks of 9 s or narrower; the 15-point rule is not always needed.
+
+  - key: sciex_scheduled_mrm
+    kind: technical note
+    authors: Hunter C, Simons B
+    cite_as: Hunter and Simons (SCIEX)
+    title: "The Scheduled MRM Algorithm Enables Intelligent Use of Retention Time During Multiple Reaction Monitoring"
+    source: AB SCIEX technical note 0921010-02
+    year: 2010
+    url: https://sciex.com/content/dam/SCIEX/pdf/tech-notes/all/mass-spectrometry-ScheduledMRM-0921010.pdf
+    verified: "2026-10-11: text extracted from the PDF: a cycle time giving 6-8 points across the peak at half height is optimal for integration; publication 0921010-02"
+    note: A vendor's practical sampling target.
+
+  - key: sante_11312_2021
+    kind: guidance
+    authors: European Commission, Directorate-General for Health and Food Safety
+    cite_as: SANTE/11312/2021
+    title: Analytical quality control and method validation procedures for pesticide residues analysis in food and feed
+    source: Document SANTE/11312/2021, current revision (v2026)
+    year: 2021
+    url: https://food.ec.europa.eu/document/download/d4786faf-c574-4222-a5c6-45086b3920b8_en
+    verified: "2026-10-11: text extracted from the Commission PDF (58 pp.): ion ratio within +-30% relative of the calibration standards' average in the same sequence (Table 3, D9-D11); retention time within +-0.1 min (D2); a standard's concentration checked against a second solution prepared independently (F9); no requirement on data points per peak"
+    note: Identification tolerances, calibration and QC practice, independent standard solutions.
+
+  - key: knoll_2010
+    kind: book
+    authors: Knoll GF
+    title: Radiation Detection and Measurement
+    source: 4th ed., Wiley, Hoboken NJ
+    year: 2010
+    isbn: 978-0-470-13148-0
+    verified: "2026-10-11: ISBN on the publisher's catalogue page; chapter 3 counting statistics, chapter 4 section VII dead time"
+    note: Poisson counting statistics (RSD = 1/sqrt N) and the non-paralysable dead-time model, observed = true / (1 + true tau).
+
+  - key: ich_m10_2022
+    kind: guidance
+    authors: International Council for Harmonisation
+    cite_as: ICH M10
+    title: "Bioanalytical Method Validation and Study Sample Analysis, M10"
+    source: ICH harmonised guideline, final version adopted 24 May 2022
+    year: 2022
+    url: https://database.ich.org/sites/default/files/M10_Guideline_Step4_2022_0524.pdf
+    verified: "2026-10-11: text extracted from the ICH PDF (59 pp.): section 3.2.1 selectivity evaluated for the analyte and the IS, interfering responses not more than 20% of the analyte response at the LLOQ and not more than 5% of the IS response; section 3.2 a stable isotope-labelled IS checked for unlabelled analyte; the document does not use the word cross-talk"
+    note: Selectivity for the analyte and the internal standard channels, and the check of what a labelled IS contributes.
+
+  - key: hoffmann_stroobant_2007
+    kind: book
+    authors: de Hoffmann E, Stroobant V
+    title: "Mass Spectrometry: Principles and Applications"
+    source: 3rd ed., Wiley, Chichester
+    year: 2007
+    isbn: 978-0-470-03310-4
+    verified: "2026-10-11: ISBN on the publisher's catalogue page"
+    note: Quadrupole analysers, collision-induced dissociation and breakdown curves, electron multipliers and their ageing.
+
+  - key: dawson_1995
+    kind: book
+    authors: Dawson PH (ed.)
+    title: Quadrupole Mass Spectrometry and Its Applications
+    source: Elsevier 1976; reprinted AIP Press, Woodbury NY, 1995 (American Vacuum Society Classics)
+    year: 1995
+    isbn: 978-1-56396-455-8
+    verified: "2026-10-11: reprint ISBN in library catalogues; contents list the stability diagram, resolution, mass filter aperture and acceptance, computed performance"
+    note: The Mathieu stability diagram, the trade of transmission against resolution, the RF-only low-mass cutoff.
+
+  - key: douglas_french_1992
+    kind: article
+    authors: Douglas DJ, French JB
+    title: Collisional focusing effects in radio frequency quadrupoles
+    source: Journal of the American Society for Mass Spectrometry
+    year: 1992
+    volume: "3"
+    pages: 398-408
+    doi: 10.1016/1044-0305(92)87067-9
+    verified: "2026-10-11: DOI from Crossref"
+    note: Ions in an RF-only quadrupole with gas are focused to the axis by collisions; transmission rises with pressure.
+
+  # --- electrospray and matrix effects -----------------------------------------------------------------------
+  - key: page_2007
+    kind: article
+    authors: Page JS, Kelly RT, Tang K, Smith RD
+    title: Ionization and transmission efficiency in an electrospray ionization-mass spectrometry interface
+    source: Journal of the American Society for Mass Spectrometry
+    year: 2007
+    volume: "18(9)"
+    pages: 1582-1590
+    doi: 10.1016/j.jasms.2007.05.018
+    verified: "2026-10-11: DOI on the PNNL publication record and OSTI"
+    note: Sampling into the inlet above 90% at 1 mm, more than 80% of analyte lost to incomplete desolvation after the inlet at 1 uL/min.
+
+  - key: kebarle_verkerk_2009
+    kind: article
+    authors: Kebarle P, Verkerk UH
+    title: "Electrospray: From ions in solution to ions in the gas phase, what we know now"
+    source: Mass Spectrometry Reviews
+    year: 2009
+    volume: "28(6)"
+    pages: 898-917
+    doi: 10.1002/mas.20247
+    verified: "2026-10-11: DOI from Crossref"
+    note: Droplet charging, fission (offspring carry about 2% of the mass and 15% of the charge, after Gomez and Tang), the ion evaporation and charge residue models, ionisation efficiency.
+
+  - key: gomez_tang_1994
+    kind: article
+    authors: Gomez A, Tang K
+    title: Charge and fission of droplets in electrostatic sprays
+    source: Physics of Fluids
+    year: 1994
+    volume: "6(1)"
+    pages: 404-414
+    doi: 10.1063/1.868037
+    verified: "2026-10-11: DOI from Crossref"
+    note: Photographs of charged droplets elongating and shedding progeny at 60-80% of the Rayleigh limit.
+
+  - key: king_2000
+    kind: article
+    authors: King R, Bonfiglio R, Fernandez-Metzler C, Miller-Stein C, Olah T
+    title: Mechanistic investigation of ionization suppression in electrospray ionization
+    source: Journal of the American Society for Mass Spectrometry
+    year: 2000
+    volume: "11(11)"
+    pages: 942-950
+    doi: 10.1016/S1044-0305(00)00163-X
+    verified: "2026-10-11: DOI on the publisher's page"
+    note: Suppression arises in the droplets (nonvolatile solutes change the droplet solution properties), not mainly by gas-phase charge loss.
+
+  - key: bonfiglio_1999
+    kind: article
+    authors: Bonfiglio R, King RC, Olah TV, Merkle K
+    title: The effects of sample preparation methods on the variability of the electrospray ionization response for model drug compounds
+    source: Rapid Communications in Mass Spectrometry
+    year: 1999
+    volume: "13(12)"
+    pages: 1175-1185
+    doi: 10.1002/(SICI)1097-0231(19990630)13:12<1175::AID-RCM639>3.0.CO;2-0
+    verified: "2026-10-11: DOI from Crossref"
+    note: The post-column infusion experiment that maps suppression against retention time.
+
+  - key: matuszewski_2003
+    kind: article
+    authors: Matuszewski BK, Constanzer ML, Chavez-Eng CM
+    title: Strategies for the assessment of matrix effect in quantitative bioanalytical methods based on HPLC-MS/MS
+    source: Analytical Chemistry
+    year: 2003
+    volume: "75(13)"
+    pages: 3019-3030
+    doi: 10.1021/ac020361s
+    verified: "2026-10-11: DOI resolves to the ACS article page; volume and pages from a bibliographic record"
+    note: Matrix factor as the response in matrix over the response in solvent; pre- and post-extraction spikes separate recovery from suppression.
+
+  - key: stokvis_2005
+    kind: article
+    authors: Stokvis E, Rosing H, Beijnen JH
+    title: "Stable isotopically labeled internal standards in quantitative bioanalysis using liquid chromatography/mass spectrometry: necessity or not?"
+    source: Rapid Communications in Mass Spectrometry
+    year: 2005
+    volume: "19(3)"
+    pages: 401-407
+    doi: 10.1002/rcm.1790
+    verified: "2026-10-11: DOI from Crossref"
+    note: A labelled analogue of the analyte corrects what a structural-analogue internal standard cannot, because it co-elutes and shares the chemistry.
+
+  # --- calibration -------------------------------------------------------------------------------------------
+  - key: almeida_2002
+    kind: article
+    authors: Almeida AM, Castel-Branco MM, Falcão AC
+    title: "Linear regression for calibration lines revisited: weighting schemes for bioanalytical methods"
+    source: Journal of Chromatography B
+    year: 2002
+    volume: "774(2)"
+    pages: 215-222
+    doi: 10.1016/S1570-0232(02)00244-1
+    verified: "2026-10-11: DOI on the institutional repository record"
+    note: Weighted least squares improves accuracy at the low end of the calibration line.
+
+  - key: gu_2014
+    kind: article
+    authors: Gu H, Liu G, Wang J, Aubry A-F, Arnold ME
+    title: Selecting the correct weighting factors for linear and quadratic calibration curves with least-squares regression algorithm in bioanalytical LC-MS/MS assays and impacts of using incorrect weighting factors on curve stability, data quality, and assay performance
+    source: Analytical Chemistry
+    year: 2014
+    volume: "86(18)"
+    pages: 8959-8966
+    doi: 10.1021/ac5018265
+    verified: "2026-10-11: DOI from Crossref"
+    note: Choosing the weighting from how the response's standard deviation grows with concentration; 1/x^2 recommended for LC-MS/MS.
+
+  # --- bench chemistry ----------------------------------------------------------------------------------------
+  - key: hladik_2009
+    kind: report
+    authors: Hladik ML, Orlando JL, Kuivila KM
+    title: "Collection of pyrethroids in water and sediment matrices: development and validation of a standard operating procedure"
+    source: U.S. Geological Survey Scientific Investigations Report 2009-5012
+    year: 2009
+    doi: 10.3133/sir20095012
+    verified: "2026-10-11: DOI from Crossref"
+    note: Pyrethroid losses to container walls up to 50%; glass sorbed least, then plastic, then Teflon; the loss is loosely held and reversed by agitation.
+
+  - key: lee_2002
+    kind: article
+    authors: Lee S, Gan J, Kabashima J
+    title: Recovery of synthetic pyrethroids in water samples during storage and extraction
+    source: Journal of Agricultural and Food Chemistry
+    year: 2002
+    volume: "50(25)"
+    pages: 7194-7198
+    doi: 10.1021/jf0258353
+    verified: "2026-10-11: DOI from Crossref"
+    note: Bifenthrin, permethrin and deltamethrin in solids-free water fell to 58-72% of the start, attributed to adsorption on the glass.
+
+  - key: thermo_ai10382
+    kind: technical note
+    authors: Thermo Fisher Scientific
+    cite_as: Thermo AI10382
+    title: GC-MS Food Safety Analysis (application compendium AI10382), pyrethroid vial study
+    source: Thermo Fisher Scientific
+    url: https://apps.thermoscientific.com/media/cmd/flipbooks/AI10382-GC-MS-Food-Safety-Analysis/files/assets/basic-html/page24.html
+    verified: "2026-10-11: page located; non-silanised amber glass vials gave poor recovery and non-linear calibration for bifenthrin and permethrin, polypropylene improved both, high-purity borosilicate glass was best"
+    note: Pyrethroids lost to ordinary glass vials from dilute solutions.
+
+  - key: murakoshi_shimadzu
+    kind: technical note
+    authors: Murakoshi M, Fukuzawa K, Sato Y, Asakawa N
+    title: Adsorption Phenomenon and Development of Low Adsorption Vials for LC and LC/MS
+    source: Shimadzu Corporation; presented at the 27th Conference of the Society for Chromatographic Sciences
+    url: https://icpms.labrulez.com/labrulez-bucket-strapi-h3hsga3/adsorption_phenomenon_7b513355da/adsorption_phenomenon.pdf
+    verified: "2026-10-11: document located; ionic adsorption of high-pKa basic compounds to silanols on glass and hydrophobic adsorption to glass and polypropylene confirmed; salts weaken the ionic binding"
+    note: Which compounds stick to which vials, and why.
+
+  - key: waters_chlormequat_2024
+    kind: technical note
+    authors: Waters Corporation
+    cite_as: Waters chlormequat note 2024
+    title: Determination of Chlormequat Chloride Residues in Cereals by LC-MS/MS
+    source: Waters application note
+    year: 2024
+    url: https://www.waters.com/nextgen/hu/en/library/application-notes/2024/determination-of-chlormequat-chloride-residues-in-cereals-by-lc-ms-ms.html
+    verified: "2026-10-11: page located; a QuPPe-type extraction with polypropylene autosampler vials"
+    note: Polypropylene vials are the practice for the quaternary ammonium pesticide; the note does not say why.
+
+  - key: restek_2021
+    kind: web
+    authors: Simons C
+    title: "Chemical Reference Standards: Don't Just Snap and Pour (Part 2)"
+    source: Restek blog
+    year: 2021
+    url: https://discover.restek.com/?p=51633
+    verified: "2026-10-11: post read: some compounds fall out of solution when stored refrigerated or frozen; bring to room temperature and sonicate 10-15 min, gentle warming to about 40 C if needed; transfer from the lower half of the vial"
+    note: Handling a cold standard before drawing from it.
+
+  - key: mettler_pipetting
+    kind: web
+    authors: Mettler-Toledo (Rainin)
+    cite_as: Mettler-Toledo pipetting guide
+    title: Improve Your Data with Good Pipetting Practice
+    source: Mettler-Toledo pipetting techniques guide
+    url: https://www.mt.com/us/en/home/products/pipettes/pipette/pipetting-techniques.html
+    verified: "2026-10-11: guide located; forward pipetting for aqueous samples, reverse pipetting for viscous and volatile liquids, pre-rinse the tip for volatile liquids, positive displacement for very viscous or volatile ones"
+    note: Why a volatile or viscous solvent delivers less than the setting with an air-displacement pipette.
+
+  - key: pubchem_acetonitrile
+    kind: database
+    authors: National Center for Biotechnology Information
+    cite_as: PubChem CID 6342
+    title: "PubChem compound summary: acetonitrile (CID 6342), density"
+    source: PubChem
+    url: https://pubchem.ncbi.nlm.nih.gov/compound/6342
+    verified: "2026-10-11: density 0.786 g/mL at 20 C (PAC database), 0.787 (CHRIS), specific gravity 0.787 (Merck Index) from the record"
+    note: Acetonitrile is lighter than water, so an aqueous component added to an acetonitrile stock sinks until mixed.
+
+  # --- electrospray ------------------------------------------------------------------------------------------
+  - key: fenn_1989
+    kind: article
+    authors: Fenn JB, Mann M, Meng CK, Wong SF, Whitehouse CM
+    title: Electrospray ionization for mass spectrometry of large biomolecules
+    source: Science
+    year: 1989
+    volume: "246"
+    pages: 64-71
+    doi: 10.1126/science.2675315
+    verified: "2026-10-11: DOI from Crossref"
+    note: "Electrospray as an ion source for mass spectrometry: charged droplets, desolvation, the counter-current bath gas."
+
+  - key: yamashita_fenn_1984
+    kind: article
+    authors: Yamashita M, Fenn JB
+    title: Electrospray ion source. Another variation on the free-jet theme
+    source: The Journal of Physical Chemistry
+    year: 1984
+    volume: "88"
+    pages: 4451-4459
+    doi: 10.1021/j150664a002
+    verified: "2026-10-11: DOI from Crossref"
+    note: The source design with a counter-flowing drying gas that carries solvent vapour away from the inlet while the field draws ions in.
+
+  - key: taylor_1964
+    kind: article
+    authors: Taylor G
+    title: Disintegration of water drops in an electric field
+    source: Proceedings of the Royal Society of London A
+    year: 1964
+    volume: "280"
+    pages: 383-397
+    doi: 10.1098/rspa.1964.0151
+    verified: "2026-10-11: DOI from Crossref"
+    note: The conical meniscus a conducting liquid takes in a strong field (the Taylor cone) and the jet from its tip.
+
+  - key: rayleigh_1882
+    kind: article
+    authors: Rayleigh L
+    title: On the equilibrium of liquid conducting masses charged with electricity
+    source: Philosophical Magazine
+    year: 1882
+    volume: "14"
+    pages: 184-186
+    doi: 10.1080/14786448208628425
+    verified: "2026-10-11: DOI from Crossref"
+    note: The charge a droplet can hold before Coulomb repulsion overcomes surface tension (the Rayleigh limit).
+
+  - key: iribarne_thomson_1976
+    kind: article
+    authors: Iribarne JV, Thomson BA
+    title: On the evaporation of small ions from charged droplets
+    source: The Journal of Chemical Physics
+    year: 1976
+    volume: "64"
+    pages: 2287-2294
+    doi: 10.1063/1.432536
+    verified: "2026-10-11: DOI from Crossref"
+    note: The ion evaporation model, how small ions leave a highly charged droplet directly.
+
+  - key: dole_1968
+    kind: article
+    authors: Dole M, Mack LL, Hines RL, Mobley RC, Ferguson LD, Alice MB
+    title: Molecular beams of macroions
+    source: The Journal of Chemical Physics
+    year: 1968
+    volume: "49"
+    pages: 2240-2249
+    doi: 10.1063/1.1670391
+    verified: "2026-10-11: DOI from Crossref"
+    note: The charge residue model, a droplet drying down to a single ion.
+
+  - key: blades_1991
+    kind: article
+    authors: Blades AT, Ikonomou MG, Kebarle P
+    title: Mechanism of electrospray mass spectrometry. Electrospray as an electrolysis cell
+    source: Analytical Chemistry
+    year: 1991
+    volume: "63"
+    pages: 2109-2114
+    doi: 10.1021/ac00019a009
+    verified: "2026-10-11: DOI from Crossref"
+    note: The excess charge in the spray comes from electrochemical reactions at the needle.
+
+  - key: van_berkel_1995
+    kind: article
+    authors: Van Berkel GJ, Zhou F
+    title: Characterization of an electrospray ion source as a controlled-current electrolytic cell
+    source: Analytical Chemistry
+    year: 1995
+    volume: "67"
+    pages: 2916-2923
+    doi: 10.1021/ac00113a028
+    verified: "2026-10-11: DOI from Crossref"
+    note: The spray as a controlled-current electrolytic cell.
+
+  - key: bruins_1987
+    kind: article
+    authors: Bruins AP, Covey TR, Henion JD
+    title: Ion spray interface for combined liquid chromatography/atmospheric pressure ionization mass spectrometry
+    source: Analytical Chemistry
+    year: 1987
+    volume: "59"
+    pages: 2642-2646
+    doi: 10.1021/ac00149a003
+    verified: "2026-10-11: DOI from Crossref"
+    note: Pneumatically assisted electrospray, a nebulising gas shearing the liquid into finer droplets at LC flow rates.
+
+  - key: page_2009
+    kind: article
+    authors: Page JS, Marginean I, Baker ES, Kelly RT, Tang K, Smith RD
+    title: Biases in ion transmission through an electrospray ionization-mass spectrometry capillary inlet
+    source: Journal of the American Society for Mass Spectrometry
+    year: 2009
+    volume: "20"
+    pages: 2265-2272
+    doi: 10.1016/j.jasms.2009.08.018
+    verified: "2026-10-11: DOI from Crossref"
+    note: What the inlet capillary passes and loses, and how that depends on the ion and the conditions.
+
+  - key: langmuir_1918
+    kind: article
+    authors: Langmuir I
+    title: The evaporation of small spheres
+    source: Physical Review
+    year: 1918
+    volume: "12"
+    pages: 368-370
+    doi: 10.1103/PhysRev.12.368
+    verified: "2026-10-11: title, author and year on the publisher's abstract page"
+    note: The origin of the d-squared law, a quiescent droplet's surface area falling linearly in time as it evaporates.
+
+  - key: agilent_5990_3494
+    kind: technical note
+    authors: Agilent Technologies
+    cite_as: Agilent 5990-3494EN
+    title: Agilent Jet Stream thermal gradient focusing technology
+    source: Agilent Technologies technical note 5990-3494EN
+    url: https://www.agilent.com/cs/library/technicaloverviews/public/5990-3494en_lo%20CMS.pdf
+    verified: "2026-10-11: document located; a superheated nitrogen sheath gas confines the nebuliser spray, dries ions and concentrates them in front of the sampling orifice; year not confirmed on the page"
+    note: The heated sheath gas of the Jet Stream source the example method's Ultivo carries.
+
+  - key: crc_handbook_97
+    kind: book
+    authors: Haynes WM (ed.)
+    cite_as: CRC Handbook 97th ed.
+    title: CRC Handbook of Chemistry and Physics
+    source: 97th ed., CRC Press, Boca Raton FL
+    year: 2016
+    isbn: 978-1-4987-5428-6
+    verified: "2026-10-11: ISBN in library catalogues; the vapour pressures (water 2.34 kPa, methanol 13.0 kPa at 20 C) and surface tensions (72.8 and 22.6 mN/m) the spray cartoon uses are the handbook's standard tabulated values"
+    note: Vapour pressure and surface tension of water and methanol at 20 C.
+
+  # --- the quadrupole and the cell -----------------------------------------------------------------------------
+  - key: paul_steinwedel_1953
+    kind: article
+    authors: Paul W, Steinwedel H
+    title: Ein neues Massenspektrometer ohne Magnetfeld
+    source: Zeitschrift für Naturforschung A
+    year: 1953
+    volume: "8"
+    pages: 448-450
+    doi: 10.1515/zna-1953-0710
+    verified: "2026-10-11: DOI from Crossref"
+    note: The quadrupole mass filter, with a DC and an RF voltage on two rod pairs of opposite sign.
+
+  - key: abramowitz_stegun_1964
+    kind: book
+    authors: Abramowitz M, Stegun IA (eds.)
+    cite_as: Abramowitz and Stegun
+    title: "Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables"
+    source: National Bureau of Standards Applied Mathematics Series 55, 1964; Dover reprint 1965
+    year: 1964
+    isbn: 0-486-61272-4
+    verified: "2026-10-11: ISBN and edition in library catalogues; chapter 20 Mathieu functions, series 20.2.25 for the characteristic values"
+    note: The characteristic values a0(q) and b1(q) that bound the first stability region.
+
+  - key: dehmelt_1967
+    kind: article
+    authors: Dehmelt HG
+    title: Radiofrequency spectroscopy of stored ions I. Storage
+    source: Advances in Atomic and Molecular Physics
+    year: 1968
+    volume: "3"
+    pages: 53-72
+    doi: 10.1016/S0065-2199(08)60170-0
+    verified: "2026-10-11: DOI from Crossref (title, volume 3, pages 53-72, published 1968)"
+    note: The pseudopotential, an ion in a fast-oscillating inhomogeneous field feels on average a bowl proportional to the square of the field.
+
+  - key: gerlich_1992
+    kind: article
+    authors: Gerlich D
+    title: "Inhomogeneous RF fields: a versatile tool for the study of processes with slow ions"
+    source: Advances in Chemical Physics
+    year: 1992
+    volume: "82"
+    pages: 1-176
+    doi: 10.1002/9780470141397.ch1
+    verified: "2026-10-11: DOI from Crossref"
+    note: RF multipole ion guides, the effective potential, its limits of validity, and why a static field alone cannot hold an ion.
+
+  - key: yost_enke_1978
+    kind: article
+    authors: Yost RA, Enke CG
+    title: Selected ion fragmentation with a tandem quadrupole mass spectrometer
+    source: Journal of the American Chemical Society
+    year: 1978
+    volume: "100"
+    pages: 2274-2275
+    doi: 10.1021/ja00475a072
+    verified: "2026-10-11: DOI from Crossref"
+    note: The triple quadrupole, a mass filter, an RF-only collision cell and a second mass filter in series.
+
+  - key: paul_1990
+    kind: article
+    authors: Paul W
+    title: Electromagnetic traps for charged and neutral particles
+    source: Reviews of Modern Physics (Nobel lecture 1989)
+    year: 1990
+    volume: "62"
+    pages: 531-540
+    doi: 10.1103/RevModPhys.62.531
+    verified: "2026-10-11: DOI from Crossref (title, journal, volume 62, pages 531-540, 1990); the lecture text was not re-read for this entry (nobelprize.org and the APS page refuse automated access)"
+    note: The quadrupole mass filter and the ion trap as Mathieu systems with the stability diagram; the saddle potential and its mechanical analogue, a ball on a rotating saddle; a static field alone cannot hold a charge.
+
+  - key: skullerud_1968
+    kind: article
+    authors: Skullerud HR
+    title: The stochastic computer simulation of ion motion in a gas subjected to a constant electric field
+    source: "Journal of Physics D: Applied Physics"
+    year: 1968
+    volume: "1(11)"
+    pages: 1567-1568
+    doi: 10.1088/0022-3727/1/11/423
+    verified: "2026-10-11: DOI from Crossref (title, journal, volume 1 issue 11, pages 1567-1568, 1968)"
+    note: The null-collision method, sampling collisions at a constant bounding rate and thinning by the true rate, which the collision cell model uses.
+
+  - key: picache_2019
+    kind: article
+    authors: Picache JA, Rose BS, Balinski A, Leaptrot KL, Sherrod SD, May JC, McLean JA
+    title: Collision cross section compendium to annotate and predict multi-omic compound identities
+    source: Chemical Science
+    year: 2019
+    volume: "10(4)"
+    pages: 983-993
+    doi: 10.1039/c8sc04396e
+    verified: "2026-10-11: DOI from Crossref; abstract via Europe PMC (more than 3800 drift-tube ion mobility CCS values from traceable standards); the compendium's caffeine [M+H]+ value (194 Da, 140.6 A^2) read from PubChem's record of the dataset, where drift-tube values in nitrogen from other labs agree at about 140 A^2"
+    note: Measured collision cross-sections of small molecules, the order of magnitude the collision cell's assumed 150 A^2 at 200 Da rests on.
+
+  # --- the C18 surface and hydrophobicity ----------------------------------------------------------------------
+  - key: dorsey_dill_1989
+    kind: article
+    authors: Dorsey JG, Dill KA
+    title: The molecular mechanism of retention in reversed-phase liquid chromatography
+    source: Chemical Reviews
+    year: 1989
+    volume: "89(2)"
+    pages: 331-346
+    doi: 10.1021/cr00092a005
+    verified: "2026-10-11: DOI from Crossref"
+    note: Retention as partitioning of the solute into the bonded-chain layer; the chains' order depends on their grafting density; hydrophobicity drives retention.
+
+  - key: lippa_2005
+    kind: article
+    authors: Lippa KA, Sander LC, Mountain RD
+    title: "Molecular dynamics simulations of alkylsilane stationary-phase order and disorder. 1. Effects of surface coverage and bonding chemistry"
+    source: Analytical Chemistry
+    year: 2005
+    volume: "77(24)"
+    pages: 7852-7861
+    doi: 10.1021/ac0510843
+    verified: "2026-10-11: DOI from Crossref"
+    note: "Simulated C18 chains on silica: tilt and gauche defects depend on the surface coverage; the layer is a disordered brush at ordinary coverages."
+
+  - key: rafferty_2007
+    kind: article
+    authors: Rafferty JL, Zhang L, Siepmann JI, Schure MR
+    title: "Retention mechanism in reversed-phase liquid chromatography: a molecular perspective"
+    source: Analytical Chemistry
+    year: 2007
+    volume: "79(17)"
+    pages: 6551-6558
+    doi: 10.1021/ac0705115
+    verified: "2026-10-11: DOI from Crossref"
+    note: "Molecular simulation of retention: solutes partition into the chain layer, polar groups stay at the interface with the solvent, the chains are disordered and solvent penetrates them."
+
+  - key: rafferty_2008
+    kind: article
+    authors: Rafferty JL, Siepmann JI, Schure MR
+    title: Influence of bonded-phase coverage in reversed-phase liquid chromatography via molecular simulation
+    source: Journal of Chromatography A
+    year: 2008
+    volume: "1204"
+    pages: 11-19
+    doi: 10.1016/j.chroma.2008.07.037
+    verified: "2026-10-11: DOI from Crossref"
+    note: How the grafting density (chains per unit area) changes the chain conformations and retention.
+
+  - key: rafferty_2011
+    kind: article
+    authors: Rafferty JL, Siepmann JI, Schure MR
+    title: "Mobile phase effects in reversed-phase liquid chromatography: a comparison of acetonitrile/water and methanol/water solvents as studied by molecular simulation"
+    source: Journal of Chromatography A
+    year: 2011
+    volume: "1218"
+    pages: 2203-2213
+    doi: 10.1016/j.chroma.2011.02.012
+    verified: "2026-10-11: DOI from Crossref"
+    note: The organic modifier is enriched at the chain tops and penetrates the chain layer, methanol less deeply than acetonitrile; water stays mostly outside.
+
+  - key: wildman_crippen_1999
+    kind: article
+    authors: Wildman SA, Crippen GM
+    title: Prediction of physicochemical parameters by atomic contributions
+    source: Journal of Chemical Information and Computer Sciences
+    year: 1999
+    volume: "39(5)"
+    pages: 868-873
+    doi: 10.1021/ci990307l
+    verified: "2026-10-11: DOI from Crossref"
+    note: The atomic log P contributions that RDKit implements; they sum to the molecule's Crippen log P.
+
+  - key: cheng_2007
+    kind: article
+    authors: Cheng T, Zhao Y, Li X, Lin F, Xu Y, Zhang X, Li Y, Wang R, Lai L
+    title: Computation of octanol-water partition coefficients by guiding an additive model with knowledge
+    source: Journal of Chemical Information and Modeling
+    year: 2007
+    volume: "47(6)"
+    pages: 2140-2148
+    doi: 10.1021/ci700257y
+    verified: "2026-10-11: DOI from Crossref"
+    note: XLogP3, the log P estimate PubChem reports and the retention-by-analogy fit uses.
+
+  - key: pubchem_methanol
+    kind: database
+    authors: National Center for Biotechnology Information
+    cite_as: PubChem CID 887
+    title: "PubChem compound summary: methanol (CID 887), density"
+    source: PubChem
+    url: https://pubchem.ncbi.nlm.nih.gov/compound/887
+    verified: "2026-10-11: density 0.7866 at 25 C (Merck Index) and 0.7914 at 20 C (PAC database) from the record; 32.04 g/mol over 0.7866 g/mL gives the 40.7 mL/mol the scene uses"
+    note: Methanol's molar volume for the mole fraction of the drawn solvent.
+
+  # --- the method, the regulation, the lab ---------------------------------------------------------------------
+  - key: agilent_5994_1734en
+    kind: technical note
+    authors: Stone PJW, Hitchcock J, Roy J-F, Deckers C
+    cite_as: Agilent 5994-1734EN
+    title: Determination of Pesticides and Mycotoxins in Cannabis Flower as Defined by Legalized U.S. State Recreational Cannabis Regulations
+    source: Agilent Technologies application note 5994-1734EN
+    year: 2020
+    url: https://www.agilent.com/cs/library/applications/application-pesticide-residue-in-cannabis-with-lcms-us-5994-1734en-agilent.pdf
+    verified: "2026-10-11: local copy in data/reference read: authors, publication number and year from the document; the Agilent URL refused automated access"
+    note: Transitions, fragmentor and collision energies, retention order for the example method.
+
+  - key: mn_ocm_cta_v2
+    kind: regulation
+    authors: Minnesota Office of Cannabis Management
+    cite_as: MN OCM CTA v2.0
+    title: Cannabis Technical Authority v2.0, Tables 6.2 and 6.4
+    source: Minnesota Office of Cannabis Management
+    url: https://mn.gov/ocm/assets/OCM_Cannabis_Technical_Authority_v2.0_tcm1202-678506.pdf
+    verified: "2026-10-10: the analyte list and limits parsed into data/reference/mn_ocm_cta_v2_analytes.csv"
+    note: The regulated list, action limits, and which analytes are reported as sums.

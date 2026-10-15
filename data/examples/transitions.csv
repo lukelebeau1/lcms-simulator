@@ -1,0 +1,152 @@
+analyte,precursor_mz,product_mz,role,retention_time_min,window_min,polarity,adduct,fragmentor_v,collision_energy_v,cell_accel_v,relative_response,internal_standard
+Acephate,184.0,143.0,quantifier,1.25,1,positive,,60,5,4,1.0,Daminozide-D4
+Acephate,184.0,95.0,qualifier,1.25,1,positive,,60,20,4,0.5,Daminozide-D4
+Acequinocyl,402.3,343.2,quantifier,8.45,1,positive,,90,10,4,1.0,Permethrin-D5
+Acequinocyl,402.3,189.1,qualifier,8.45,1,positive,,90,41,4,0.5,Permethrin-D5
+Acequinocyl,385.3,189.1,qualifier,8.45,1,positive,,90,41,4,0.25,Permethrin-D5
+Acetamiprid,223.0,126.1,quantifier,3.48,1,positive,,100,20,3,1.0,Imidacloprid-D4
+Acetamiprid,223.0,90.1,qualifier,3.48,1,positive,,100,35,3,0.5,Imidacloprid-D4
+Aflatoxin B1,313.1,285.1,quantifier,3.6,2,positive,,130,20,3,1.0,Imidacloprid-D4
+Aflatoxin B1,313.1,241.1,qualifier,3.6,2,positive,,130,35,3,0.5,Imidacloprid-D4
+Aflatoxin B2,315.1,287.1,quantifier,3.4,2,positive,,130,25,3,1.0,Imidacloprid-D4
+Aflatoxin B2,315.1,259.1,qualifier,3.4,2,positive,,130,25,3,0.5,Imidacloprid-D4
+Aflatoxin G1,329.1,311.1,quantifier,3.35,2,positive,,130,20,3,1.0,Imidacloprid-D4
+Aflatoxin G1,329.1,243.1,qualifier,3.35,2,positive,,130,25,3,0.5,Imidacloprid-D4
+Aflatoxin G2,331.1,285.1,quantifier,3.25,2,positive,,130,25,3,1.0,Imidacloprid-D4
+Aflatoxin G2,331.1,245.1,qualifier,3.25,2,positive,,130,30,3,0.5,Imidacloprid-D4
+Avermectin B1a,890.5,567.1,quantifier,7.01,1,positive,,160,8,4,1.0,Pyridaben-D13
+Avermectin B1a,890.5,305.1,qualifier,7.01,1,positive,,160,28,4,0.5,Pyridaben-D13
+Avermectin B1a,890.5,145.0,qualifier,7.01,1,positive,,160,45,4,0.25,Pyridaben-D13
+Avermectin B1b,876.6,553.2,quantifier,6.7,4,positive,,160,7,4,1.0,Pyridaben-D13
+Avermectin B1b,876.6,291.1,qualifier,6.7,4,positive,,160,15,4,0.5,Pyridaben-D13
+Azoxystrobin,404.0,372.2,quantifier,4.66,1,positive,,100,10,3,1.0,Azoxystrobin-D4
+Azoxystrobin,404.0,344.0,qualifier,4.66,1,positive,,100,25,3,0.5,Azoxystrobin-D4
+Bifenazate,301.1,198.2,quantifier,4.7,1,positive,,80,5,3,1.0,Azoxystrobin-D4
+Bifenazate,301.1,170.1,qualifier,4.7,1,positive,,80,15,3,0.5,Azoxystrobin-D4
+Bifenthrin,440.1599,181.1012,quantifier,7.65,1,positive,,90,5,5,1.0,Permethrin-D5
+Bifenthrin,440.1599,166.0,qualifier,7.65,1,positive,,90,20,5,0.5,Permethrin-D5
+Boscalid,343.0399,307.0633,quantifier,4.59,1,positive,,140,12,5,1.0,Myclobutanil-D4
+Boscalid,343.0399,271.0,qualifier,4.59,1,positive,,140,28,5,0.5,Myclobutanil-D4
+Carbaryl,202.0,145.0,quantifier,3.92,1,positive,,70,0,3,1.0,Carbaryl-D7
+Carbaryl,202.0,127.1,qualifier,3.92,1,positive,,70,25,3,0.5,Carbaryl-D7
+Chlorantraniliprole,483.9,452.9,quantifier,4.4,1,positive,,100,15,3,1.0,Myclobutanil-D4
+Chlorantraniliprole,483.9,285.9,qualifier,4.4,1,positive,,100,10,3,0.5,Myclobutanil-D4
+Chlorfenapyr,409.2,59.0,quantifier,5.95,2,positive,,130,20,3,1.0,Etoxazole-D5
+Chlorfenapyr,409.2,31.0,qualifier,5.95,2,positive,,130,45,3,0.5,Etoxazole-D5
+Chlorpyrifos,349.9336,197.9275,quantifier,6.32,1,positive,,100,20,5,1.0,Etoxazole-D5
+Chlorpyrifos,349.9336,96.9508,qualifier,6.32,1,positive,,100,41,5,0.5,Etoxazole-D5
+Cinerin I,317.2,107.1,quantifier,6.18,1,positive,,90,16,4,1.0,Etoxazole-D5
+Cinerin I,317.2,77.0,qualifier,6.18,1,positive,,90,60,4,0.5,Etoxazole-D5
+Cinerin I,317.2,149.1,qualifier,6.18,1,positive,,90,4,4,0.25,Etoxazole-D5
+Cinerin II,361.2,76.8,quantifier,5.8,2,positive,,92,70,4,1.0,Etoxazole-D5
+Cinerin II,361.2,106.9,qualifier,5.8,2,positive,,92,16,4,0.5,Etoxazole-D5
+Cinerin II,361.2,149.1,qualifier,5.8,2,positive,,92,4,4,0.25,Etoxazole-D5
+Clofentezine,303.0,138.0,quantifier,5.51,1,positive,,90,10,3,1.0,Tebuconazole-D9
+Clofentezine,303.0,102.1,qualifier,5.51,1,positive,,90,40,3,0.5,Tebuconazole-D9
+Cyfluthrin,453.3,193.0,quantifier,7.15,1,positive,,90,13,2,1.0,Pyridaben-D13
+Cyfluthrin,451.3,191.0,qualifier,7.15,1,positive,,90,13,2,0.5,Pyridaben-D13
+Cypermethrin,435.3,193.0,quantifier,7.2,2,positive,,90,16,2,1.0,Pyridaben-D13
+Cypermethrin,433.3,416.3,qualifier,7.2,2,positive,,90,7,2,0.5,Pyridaben-D13
+Cypermethrin,433.3,191.0,qualifier,7.2,2,positive,,90,16,2,0.25,Pyridaben-D13
+Daminozide,161.0,143.0,quantifier,1.1,2,positive,,80,10,2,1.0,Daminozide-D4
+Daminozide,161.0,61.1,qualifier,1.1,2,positive,,80,10,2,0.5,Daminozide-D4
+Diazinon,305.1083,169.0794,quantifier,5.07,1,positive,,100,20,5,1.0,Tebuconazole-D9
+Diazinon,305.1083,153.1022,qualifier,5.07,1,positive,,100,20,5,0.5,Tebuconazole-D9
+Naled,380.8,127.0,quantifier,4.22,1,positive,,90,8,3,1.0,Carbaryl-D7
+Naled,378.8,127.0,qualifier,4.22,1,positive,,90,5,5,0.5,Carbaryl-D7
+Dichlorvos,220.96,109.0,quantifier,3.77,2,positive,,110,12,3,1.0,Carbaryl-D7
+Dichlorvos,220.96,79.0,qualifier,3.77,2,positive,,110,24,3,0.5,Carbaryl-D7
+Dimethoate,230.0,199.0,quantifier,3.33,1,positive,,70,5,3,1.0,Imidacloprid-D4
+Dimethoate,230.0,125.0,qualifier,3.33,1,positive,,70,21,3,0.5,Imidacloprid-D4
+Etofenprox,394.2,177.2,quantifier,7.66,1,positive,,90,10,3,1.0,Permethrin-D5
+Etofenprox,394.2,107.1,qualifier,7.66,1,positive,,90,45,3,0.5,Permethrin-D5
+Etoxazole,360.177,141.0146,quantifier,6.21,1,positive,,140,28,5,1.0,Etoxazole-D5
+Etoxazole,360.177,113.0197,qualifier,6.21,1,positive,,140,50,5,0.5,Etoxazole-D5
+Fenoxycarb,302.1,116.1,quantifier,5.03,1,positive,,100,5,3,1.0,Tebuconazole-D9
+Fenoxycarb,302.1,88.1,qualifier,5.03,1,positive,,100,15,3,0.5,Tebuconazole-D9
+Fenpyroximate,422.1,366.2,quantifier,6.56,1,positive,,130,15,3,1.0,Etoxazole-D5
+Fenpyroximate,422.1,135.1,qualifier,6.56,1,positive,,130,30,3,0.5,Etoxazole-D5
+Fipronil,436.9,332.0,quantifier,4.69,1,negative,,100,18,2,1.0,Azoxystrobin-D4
+Fipronil,434.9,330.0,qualifier,4.69,1,negative,,100,18,2,0.5,Azoxystrobin-D4
+Fipronil,434.9,250.1,qualifier,4.69,1,negative,,100,30,2,0.25,Azoxystrobin-D4
+Flonicamid,230.0,203.0,quantifier,2.16,1,positive,,120,15,2,1.0,Daminozide-D4
+Flonicamid,230.0,174.0,qualifier,2.16,1,positive,,120,20,3,0.5,Daminozide-D4
+Fludioxonil,229.0,185.0,quantifier,4.35,1,positive,,144,13,3,1.0,Myclobutanil-D4
+Fludioxonil,229.0,158.0,qualifier,4.35,1,positive,,144,25,3,0.5,Myclobutanil-D4
+Hexythiazox,353.0,228.1,quantifier,6.63,1,positive,,90,10,3,1.0,Pyridaben-D13
+Hexythiazox,353.0,168.1,qualifier,6.63,1,positive,,90,25,3,0.5,Pyridaben-D13
+Imazalil,297.0,201.0,quantifier,4.01,2,positive,,120,15,3,1.0,Carbaryl-D7
+Imazalil,297.0,159.0,qualifier,4.01,2,positive,,120,20,7,0.5,Carbaryl-D7
+Imidacloprid,256.0,209.1,quantifier,3.35,1,positive,,90,16,2,1.0,Imidacloprid-D4
+Imidacloprid,256.0,175.1,qualifier,3.35,1,positive,,90,20,2,0.5,Imidacloprid-D4
+Jasmolin I,331.2,76.9,quantifier,6.0,4,positive,,90,60,3,1.0,Etoxazole-D5
+Jasmolin I,331.2,106.9,qualifier,6.0,4,positive,,90,20,3,0.5,Etoxazole-D5
+Jasmolin I,331.2,163.0,qualifier,6.0,4,positive,,90,4,3,0.25,Etoxazole-D5
+Jasmolin II,375.2,76.8,quantifier,6.0,4,positive,,95,76,3,1.0,Etoxazole-D5
+Jasmolin II,375.2,106.9,qualifier,6.0,4,positive,,95,24,3,0.5,Etoxazole-D5
+Jasmolin II,375.2,163.2,qualifier,6.0,4,positive,,95,4,3,0.25,Etoxazole-D5
+Kresoxim-methyl,314.1,267.1,quantifier,5.22,1,positive,,80,0,3,1.0,Tebuconazole-D9
+Kresoxim-methyl,314.1,222.2,qualifier,5.22,1,positive,,80,10,3,0.5,Tebuconazole-D9
+Malathion,331.0433,126.9,quantifier,4.68,1,positive,,80,5,5,1.0,Azoxystrobin-D4
+Malathion,331.0433,99.0,qualifier,4.68,1,positive,,80,10,5,0.5,Azoxystrobin-D4
+Metalaxyl,280.1,220.2,quantifier,4.15,1,positive,,100,10,3,1.0,Carbaryl-D7
+Metalaxyl,280.1,160.1,qualifier,4.15,1,positive,,100,20,3,0.5,Carbaryl-D7
+Methiocarb,226.1,169.1,quantifier,4.43,1,positive,,70,0,7,1.0,Myclobutanil-D4
+Methiocarb,226.1,121.1,qualifier,4.43,1,positive,,70,15,3,0.5,Myclobutanil-D4
+Methomyl,162.9,106.1,quantifier,1.97,1,positive,,60,5,3,1.0,Daminozide-D4
+Methomyl,162.9,88.1,qualifier,1.97,1,positive,,60,0,3,0.5,Daminozide-D4
+Myclobutanil,289.1,125.0,quantifier,4.64,1,positive,,110,35,3,1.0,Myclobutanil-D4
+Myclobutanil,289.1,70.1,qualifier,4.64,1,positive,,110,15,7,0.5,Myclobutanil-D4
+Ochratoxin A,404.1,238.9,quantifier,4.14,2,positive,,130,26,3,1.0,Carbaryl-D7
+Ochratoxin A,404.1,220.9,qualifier,4.14,2,positive,,130,32,3,0.5,Carbaryl-D7
+Oxamyl,237.0,90.1,quantifier,1.79,1,positive,,60,0,3,1.0,Daminozide-D4
+Oxamyl,237.0,72.1,qualifier,1.79,1,positive,,60,15,3,0.5,Daminozide-D4
+Paclobutrazol,294.1,125.0,quantifier,4.41,1,positive,,110,40,3,1.0,Myclobutanil-D4
+Paclobutrazol,294.1,70.1,qualifier,4.41,1,positive,,110,20,7,0.5,Myclobutanil-D4
+Permethrin,391.09,355.0,quantifier,7.55,2,positive,,120,5,3,1.0,Permethrin-D5
+Permethrin,391.09,183.0,qualifier,7.55,2,positive,,120,5,3,0.5,Permethrin-D5
+Permethrin,408.1,183.0,qualifier,7.55,2,positive,,72,20,3,0.25,Permethrin-D5
+Permethrin,408.1,355.1,qualifier,7.55,2,positive,,72,4,3,0.15,Permethrin-D5
+Phosmet,317.9,160.0,quantifier,4.71,1,positive,,80,10,3,1.0,Azoxystrobin-D4
+Phosmet,317.9,133.0,qualifier,4.71,1,positive,,80,40,3,0.5,Azoxystrobin-D4
+Piperonyl butoxide,356.2,177.1,quantifier,5.92,1,positive,,90,5,3,1.0,Etoxazole-D5
+Piperonyl butoxide,356.2,119.1,qualifier,5.92,1,positive,,90,35,3,0.5,Etoxazole-D5
+Prallethrin,301.18,169.0,quantifier,5.45,2,positive,,90,5,3,1.0,Tebuconazole-D9
+Prallethrin,301.18,105.0,qualifier,5.45,2,positive,,90,20,3,0.5,Tebuconazole-D9
+Propiconazole,342.1,159.0,quantifier,5.34,1,positive,,130,32,2,1.0,Tebuconazole-D9
+Propiconazole,342.1,69.1,qualifier,5.34,1,positive,,130,16,2,0.5,Tebuconazole-D9
+Propoxur,210.0,168.0,quantifier,3.63,1,positive,,60,5,3,1.0,Carbaryl-D7
+Propoxur,210.0,111.0,qualifier,3.63,1,positive,,60,10,3,0.5,Carbaryl-D7
+Pyrethrin I,329.21,161.0,quantifier,6.36,1,positive,,90,5,3,1.0,Etoxazole-D5
+Pyrethrin I,329.21,143.0,qualifier,6.36,1,positive,,90,20,3,0.5,Etoxazole-D5
+Pyrethrin I,329.21,133.0,qualifier,6.36,1,positive,,90,20,3,0.25,Etoxazole-D5
+Pyrethrin II,373.2,161.0,quantifier,5.8,3,positive,,102,2,3,1.0,Etoxazole-D5
+Pyrethrin II,373.2,133.1,qualifier,5.8,3,positive,,102,24,3,0.5,Etoxazole-D5
+Pyrethrin II,373.2,77.0,qualifier,5.8,3,positive,,102,98,3,0.25,Etoxazole-D5
+Pyridaben,365.1,309.1,quantifier,7.01,1,positive,,90,4,2,1.0,Pyridaben-D13
+Pyridaben,365.1,147.2,qualifier,7.01,1,positive,,90,20,2,0.5,Pyridaben-D13
+Pyridaben,365.1,117.1,qualifier,7.01,1,positive,,90,60,2,0.25,Pyridaben-D13
+Spinosyn A,732.5,142.1,quantifier,5.55,1,positive,,160,28,2,1.0,Tebuconazole-D9
+Spinosyn A,732.5,98.1,qualifier,5.55,1,positive,,160,60,2,0.5,Tebuconazole-D9
+Spinosyn D,746.5,142.1,quantifier,5.92,1,positive,,160,35,2,1.0,Etoxazole-D5
+Spinosyn D,746.5,98.0,qualifier,5.92,1,positive,,160,55,2,0.5,Etoxazole-D5
+Spiromesifen,388.2,273.0,quantifier,6.12,1,positive,,80,6,2,1.0,Etoxazole-D5
+Spiromesifen,388.2,255.0,qualifier,6.12,1,positive,,80,26,2,0.5,Etoxazole-D5
+Spirotetramat,374.2,330.2,quantifier,4.78,1,positive,,110,12,5,1.0,Azoxystrobin-D4
+Spirotetramat,374.2,302.2,qualifier,4.78,1,positive,,110,12,5,0.5,Azoxystrobin-D4
+Spirotetramat,374.2,216.1,qualifier,4.78,1,positive,,110,36,5,0.25,Azoxystrobin-D4
+Tebuconazole,308.1,124.9,quantifier,5.0,1,positive,,120,47,2,1.0,Tebuconazole-D9
+Tebuconazole,308.1,70.0,qualifier,5.0,1,positive,,120,40,2,0.5,Tebuconazole-D9
+Thiamethoxam,292.03,211.1,quantifier,2.81,1,positive,,80,8,2,1.0,Imidacloprid-D4
+Thiamethoxam,292.03,181.1,qualifier,2.81,1,positive,,80,20,2,0.5,Imidacloprid-D4
+Trifloxystrobin,409.1,186.0,quantifier,5.69,1,positive,,100,12,2,1.0,Etoxazole-D5
+Trifloxystrobin,409.1,145.0,qualifier,5.69,1,positive,,100,52,2,0.5,Etoxazole-D5
+Daminozide-D4,165.0251,147.0251,quantifier,1.09,2,positive,,80,10,2,1.0,
+Imidacloprid-D4,260.0251,213.1251,quantifier,3.34,1,positive,,90,16,2,1.0,
+Carbaryl-D7,209.0439,152.0439,quantifier,3.91,1,positive,,70,0,3,1.0,
+Myclobutanil-D4,293.1251,129.0251,quantifier,4.63,1,positive,,110,35,3,1.0,
+Azoxystrobin-D4,408.0251,376.2251,quantifier,4.65,1,positive,,100,10,3,1.0,
+Tebuconazole-D9,317.1565,124.9,quantifier,4.99,1,positive,,120,47,2,1.0,
+Etoxazole-D5,365.2084,141.0146,quantifier,6.2,1,positive,,140,28,5,1.0,
+Pyridaben-D13,378.1816,322.1816,quantifier,7.0,1,positive,,90,4,2,1.0,
+Permethrin-D5,396.1214,360.0314,quantifier,7.54,2,positive,,120,5,3,1.0,

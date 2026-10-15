@@ -1,0 +1,86 @@
+# Bench checks that separate faults the results alone cannot. Read by the symptom matcher: for the leading
+# candidates it names a check whose outcome differs between them. A fault not listed under a check is
+# expected to leave that check unchanged. Drafted from general practice and the cited guidance; to be reviewed
+# by a lab before use (provenance: assumed). `sources` cite data/reference/references.yaml for the check's rationale.
+checks:
+  - name: IS areas, samples against calibrators
+    sources: [stokvis_2005, matuszewski_2003]
+    do: Compare each internal standard's area in the samples and QCs with its area in the calibrators of the same run.
+    outcomes:
+      istd_overspiked: higher in samples and QCs by the over-spike factor
+      istd_window_miss: near zero in every injection
+      low_injection: lower in every injection where the volume was short, analytes with them
+      drift: trend with injection order in every kind of injection
+      matrix_suppression: lower in samples only, for the IS that elute where the matrix does
+      istd_late: as the calibrators for an IS added after extraction, but its analytes recover differently
+
+  - name: QC from an independent stock
+    sources: [sante_11312_2021]
+    do: Prepare a QC from a stock of another lot or supplier, with the IS spiked by a checked pipette, through the whole procedure.
+    outcomes:
+      stock_strong: reads low like the samples, by the same factor
+      stock_degraded: the affected analytes read high
+      isomer_share: the summed analyte's component reads off by the share
+      istd_overspiked: passes when its IS was spiked correctly
+      volume_error: passes when its volumes were checked
+      low_recovery: reads low only if its matrix is like the samples'
+
+  - name: Post-column infusion of a sample extract
+    sources: [bonfiglio_1999, king_2000]
+    do: Infuse the analyte mix after the column while injecting a sample extract; look for dips at the analyte retention times.
+    outcomes:
+      matrix_suppression: dips at the retention times of the biased analytes, deeper than in the calibration matrix
+      low_recovery: no dip beyond the calibration matrix
+
+  - name: Spike before and after extraction
+    sources: [matuszewski_2003]
+    do: Spike one portion before and one after extraction at the same level; compare the two results.
+    outcomes:
+      low_recovery: the pre-extraction spike reads low, the post-extraction spike reads right
+      matrix_suppression: both spikes read low by the same factor
+      istd_late: the pre-extraction spike reads low for analytes whose IS went in late
+
+  - name: Re-inject the same vial
+    do: Inject the same vial again, later in the sequence or in a fresh sequence.
+    outcomes:
+      drift: the result moves with the position in the run
+      carryover: the result depends on what was injected before
+      too_many_transitions: the result scatters between injections at low level
+      saturation: the same result; the vial is unchanged, dilute it instead
+
+  - name: Dilute the extract and re-inject
+    sources: [matuszewski_2003, knoll_2010]
+    do: Dilute the extract 1 in 10 in the calibration solvent and quantify again, correcting for the dilution.
+    outcomes:
+      saturation: the corrected result rises toward the true value
+      matrix_suppression: the corrected result rises as the matrix is diluted away
+      carryover: the corrected result falls, the carried amount does not dilute with it
+      interference: the ion ratio changes with the dilution
+
+  - name: Retention times against the method table
+    sources: [sante_11312_2021, dolan_2006_dwell]
+    do: Compare every analyte's retention time with the method table; note which moved and by how much.
+    outcomes:
+      ph_error: only the ionisable analytes moved
+      organic_error: every analyte moved, each by its own amount
+      dwell_volume: every analyte moved late by about the same time, early eluters most
+      istd_window_miss: the IS peak sits outside its acquisition window
+
+  - name: Blanks after the highest standard
+    sources: [dolan_2006_carryover]
+    do: Inject a solvent blank and a matrix blank straight after the highest calibrator.
+    outcomes:
+      carryover: both blanks positive, decaying over repeated blanks
+      interference: the matrix blank positive on the quantifier, the solvent blank clean, ion ratio off
+
+  - name: Reprocess with 1/x weighting
+    sources: [almeida_2002, gu_2014]
+    do: Refit the curves with 1/x weighting and reprocess the low-level QCs.
+    outcomes:
+      wrong_weighting: the low-level accuracy recovers
+
+  - name: Longer dwell, fewer concurrent transitions
+    sources: [agilent_5990_3595, zeng_2023]
+    do: Re-acquire with a longer cycle time or narrower windows and compare the low-level precision.
+    outcomes:
+      too_many_transitions: precision and ion ratios recover at low level

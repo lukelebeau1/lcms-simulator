@@ -1,0 +1,109 @@
+# What each recipe vessel physically is: the thing drawn on the Follow page.
+# Exact `vessel` names first; `prefix` and `contains` entries catch the per-sample tubes, vials and injections.
+# Provenance: measured = stated in Agilent application note 5994-1734EN; assumed = a sensible default.
+containers:
+  - vessel: Pesticide mix (100 ug/mL)
+    kind: ampoule
+    location: freezer
+    solvent: acetonitrile
+    capacity_ml: 1.0
+    supplier: LGC (the note's state pesticide mixes, 100 ug/mL)
+    note: several mixes in practice, drawn here as one ampoule
+    provenance: measured
+  - vessel: Aflatoxin mix (100 ug/mL)
+    kind: ampoule
+    location: freezer
+    solvent: acetonitrile
+    capacity_ml: 1.0
+    supplier: LGC (aflatoxins B1, B2, G1, G2)
+    provenance: measured
+  - vessel: Ochratoxin A (2 ug/mL)
+    kind: ampoule
+    location: freezer
+    solvent: acetonitrile
+    capacity_ml: 1.0
+    supplier: as stated in the note, 2 ug/mL
+    provenance: measured
+  - vessel: Pesticide stock 10 ppm
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    provenance: assumed
+  - vessel: Aflatoxin intermediate 1 ppm
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    provenance: assumed
+  - vessel: Mycotoxin master 0.2 ppm
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    provenance: assumed
+  - vessel: IS master mix
+    kind: vial_20ml
+    location: fridge
+    solvent: 25/75 mobile phase A / methanol
+    capacity_ml: 20.0
+    note: the internal standards in the final diluent (the note uses none)
+    provenance: assumed
+  - contains: "-D"
+    kind: ampoule
+    location: freezer
+    solvent: acetonitrile
+    capacity_ml: 1.0
+    note: isotope-labelled internal standard, 100 ug/mL
+    provenance: assumed
+  - prefix: "Cal "
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    note: working calibration stock at 10x the vial level
+    provenance: assumed
+  - prefix: LCS stock
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    provenance: assumed
+  - prefix: ICV stock
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    provenance: assumed
+  - prefix: CCV 1 stock
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    provenance: assumed
+  - prefix: LOQ stock
+    kind: vial_2ml
+    location: fridge
+    solvent: acetonitrile
+    capacity_ml: 2.0
+    provenance: assumed
+  - prefix: "Tube: "
+    kind: tube
+    location: bench
+    solvent: acetonitrile over the ground flower, cleaned through C18 SPE
+    capacity_ml: 50.0
+    note: 50 mL polypropylene centrifuge tube; the extract is made to 25 mL
+    provenance: measured
+  - prefix: "Vial: "
+    kind: autosampler_vial
+    location: autosampler
+    solvent: 25/75 mobile phase A / methanol
+    capacity_ml: 2.0
+    note: 2 mL sample vial, 500 uL; the note keeps water at or below 25% so nonpolar analytes stay in solution
+    provenance: measured
+  - prefix: "Column: "
+    kind: loop
+    location: autosampler
+    solvent: the 10 uL draw between plugs of mobile phase A (the note's injector program)
+    note: the injection itself
+    provenance: measured

@@ -1,0 +1,6 @@
+# Shared by local runs and a hosted copy. The localhost binding for local runs is in scripts/run_app.py.
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false

@@ -1,0 +1,220 @@
+analyte,gradient_id,retention_time_min
+Acephate,g1x,1.245
+Acephate,g2x,1.244
+Acephate,g3x,1.25
+Acequinocyl,g1x,8.447
+Acequinocyl,g2x,11.239
+Acequinocyl,g3x,13.289
+Acetamiprid,g1x,3.481
+Acetamiprid,g2x,3.747
+Acetamiprid,g3x,3.919
+Aflatoxin B1,g1x,3.595
+Aflatoxin B1,g2x,4.01
+Aflatoxin B1,g3x,4.322
+Aflatoxin B2,g1x,3.404
+Aflatoxin B2,g2x,3.627
+Aflatoxin B2,g3x,3.793
+Aflatoxin G1,g1x,3.359
+Aflatoxin G1,g2x,3.547
+Aflatoxin G1,g3x,3.675
+Aflatoxin G2,g1x,3.248
+Aflatoxin G2,g2x,3.379
+Aflatoxin G2,g3x,3.461
+Avermectin B1a,g1x,7.003
+Avermectin B1a,g2x,9.25
+Avermectin B1a,g3x,10.983
+Avermectin B1b,g1x,6.696
+Avermectin B1b,g2x,8.701
+Avermectin B1b,g3x,10.263
+Azoxystrobin,g1x,4.665
+Azoxystrobin,g2x,5.569
+Azoxystrobin,g3x,6.378
+Bifenazate,g1x,4.699
+Bifenazate,g2x,5.56
+Bifenazate,g3x,6.374
+Bifenthrin,g1x,7.653
+Bifenthrin,g2x,9.937
+Bifenthrin,g3x,11.614
+Boscalid,g1x,4.592
+Boscalid,g2x,5.45
+Boscalid,g3x,6.263
+Carbaryl,g1x,3.927
+Carbaryl,g2x,4.567
+Carbaryl,g3x,5.089
+Chlorantraniliprole,g1x,4.396
+Chlorantraniliprole,g2x,5.278
+Chlorantraniliprole,g3x,6.098
+Chlorfenapyr,g1x,5.948
+Chlorfenapyr,g2x,7.253
+Chlorfenapyr,g3x,8.292
+Chlorpyrifos,g1x,6.314
+Chlorpyrifos,g2x,7.734
+Chlorpyrifos,g3x,8.823
+Cinerin I,g1x,6.181
+Cinerin I,g2x,7.5
+Cinerin I,g3x,8.537
+Cinerin II,g1x,5.798
+Cinerin II,g2x,7.004
+Cinerin II,g3x,7.983
+Clofentezine,g1x,5.51
+Clofentezine,g2x,6.57
+Clofentezine,g3x,7.464
+Cyfluthrin,g1x,7.148
+Cyfluthrin,g2x,9.122
+Cyfluthrin,g3x,10.59
+Cypermethrin,g1x,7.198
+Cypermethrin,g2x,9.189
+Cypermethrin,g3x,10.657
+Daminozide,g1x,1.104
+Daminozide,g2x,1.103
+Daminozide,g3x,1.094
+Diazinon,g1x,5.071
+Diazinon,g2x,6.002
+Diazinon,g3x,6.851
+Naled,g1x,4.232
+Naled,g2x,5.042
+Naled,g3x,5.847
+Dichlorvos,g1x,3.768
+Dichlorvos,g2x,4.284
+Dichlorvos,g3x,4.693
+Dimethoate,g1x,3.332
+Dimethoate,g2x,3.494
+Dimethoate,g3x,3.589
+Etofenprox,g1x,7.66
+Etofenprox,g2x,9.88
+Etofenprox,g3x,11.498
+Etoxazole,g1x,6.208
+Etoxazole,g2x,7.58
+Etoxazole,g3x,8.651
+Fenoxycarb,g1x,5.032
+Fenoxycarb,g2x,5.959
+Fenoxycarb,g3x,6.791
+Fenpyroximate,g1x,6.562
+Fenpyroximate,g2x,8.163
+Fenpyroximate,g3x,9.369
+Fipronil,g1x,4.691
+Fipronil,g2x,5.599
+Fipronil,g3x,6.448
+Flonicamid,g1x,2.162
+Flonicamid,g2x,2.152
+Flonicamid,g3x,2.155
+Fludioxonil,g1x,4.357
+Fludioxonil,g2x,5.131
+Fludioxonil,g3x,5.878
+Hexythiazox,g1x,6.628
+Hexythiazox,g2x,8.202
+Hexythiazox,g3x,9.376
+Imazalil,g1x,4.006
+Imazalil,g2x,4.779
+Imazalil,g3x,5.433
+Imidacloprid,g1x,3.351
+Imidacloprid,g2x,3.526
+Imidacloprid,g3x,3.64
+Jasmolin I,g1x,5.99
+Jasmolin I,g2x,7.26
+Jasmolin I,g3x,8.257
+Jasmolin II,g1x,5.994
+Jasmolin II,g2x,7.288
+Jasmolin II,g3x,8.316
+Kresoxim-methyl,g1x,5.215
+Kresoxim-methyl,g2x,6.205
+Kresoxim-methyl,g3x,7.058
+Malathion,g1x,4.683
+Malathion,g2x,5.556
+Malathion,g3x,6.371
+Metalaxyl,g1x,4.153
+Metalaxyl,g2x,4.928
+Metalaxyl,g3x,5.669
+Methiocarb,g1x,4.427
+Methiocarb,g2x,5.215
+Methiocarb,g3x,5.972
+Methomyl,g1x,1.976
+Methomyl,g2x,1.972
+Methomyl,g3x,1.966
+Myclobutanil,g1x,4.641
+Myclobutanil,g2x,5.486
+Myclobutanil,g3x,6.282
+Ochratoxin A,g1x,4.142
+Ochratoxin A,g2x,4.961
+Ochratoxin A,g3x,5.753
+Oxamyl,g1x,1.792
+Oxamyl,g2x,1.792
+Oxamyl,g3x,1.798
+Paclobutrazol,g1x,4.411
+Paclobutrazol,g2x,5.223
+Paclobutrazol,g3x,6.009
+Permethrin,g1x,7.555
+Permethrin,g2x,9.699
+Permethrin,g3x,11.265
+Phosmet,g1x,4.706
+Phosmet,g2x,5.568
+Phosmet,g3x,6.394
+Piperonyl butoxide,g1x,5.916
+Piperonyl butoxide,g2x,7.162
+Piperonyl butoxide,g3x,8.161
+Prallethrin,g1x,5.453
+Prallethrin,g2x,6.495
+Prallethrin,g3x,7.365
+Propiconazole,g1x,5.347
+Propiconazole,g2x,6.377
+Propiconazole,g3x,7.263
+Propoxur,g1x,3.625
+Propoxur,g2x,4.021
+Propoxur,g3x,4.298
+Pyrethrin I,g1x,6.369
+Pyrethrin I,g2x,7.764
+Pyrethrin I,g3x,8.853
+Pyrethrin II,g1x,5.799
+Pyrethrin II,g2x,7.013
+Pyrethrin II,g3x,7.993
+Pyridaben,g1x,7.009
+Pyridaben,g2x,8.787
+Pyridaben,g3x,10.124
+Spinosyn A,g1x,5.546
+Spinosyn A,g2x,6.82
+Spinosyn A,g3x,7.88
+Spinosyn D,g1x,5.922
+Spinosyn D,g2x,7.379
+Spinosyn D,g3x,8.556
+Spiromesifen,g1x,6.127
+Spiromesifen,g2x,7.476
+Spiromesifen,g3x,8.535
+Spirotetramat,g1x,4.778
+Spirotetramat,g2x,5.686
+Spirotetramat,g3x,6.533
+Tebuconazole,g1x,4.997
+Tebuconazole,g2x,5.929
+Tebuconazole,g3x,6.761
+Thiamethoxam,g1x,2.81
+Thiamethoxam,g2x,2.809
+Thiamethoxam,g3x,2.815
+Trifloxystrobin,g1x,5.692
+Trifloxystrobin,g2x,6.868
+Trifloxystrobin,g3x,7.854
+Daminozide-D4,g1x,1.091
+Daminozide-D4,g2x,1.086
+Daminozide-D4,g3x,1.092
+Imidacloprid-D4,g1x,3.339
+Imidacloprid-D4,g2x,3.507
+Imidacloprid-D4,g3x,3.62
+Carbaryl-D7,g1x,3.907
+Carbaryl-D7,g2x,4.553
+Carbaryl-D7,g3x,5.071
+Myclobutanil-D4,g1x,4.63
+Myclobutanil-D4,g2x,5.482
+Myclobutanil-D4,g3x,6.271
+Azoxystrobin-D4,g1x,4.646
+Azoxystrobin-D4,g2x,5.539
+Azoxystrobin-D4,g3x,6.38
+Tebuconazole-D9,g1x,4.987
+Tebuconazole-D9,g2x,5.917
+Tebuconazole-D9,g3x,6.758
+Etoxazole-D5,g1x,6.201
+Etoxazole-D5,g2x,7.574
+Etoxazole-D5,g3x,8.637
+Pyridaben-D13,g1x,6.997
+Pyridaben-D13,g2x,8.798
+Pyridaben-D13,g3x,10.119
+Permethrin-D5,g1x,7.538
+Permethrin-D5,g2x,9.678
+Permethrin-D5,g3x,11.265

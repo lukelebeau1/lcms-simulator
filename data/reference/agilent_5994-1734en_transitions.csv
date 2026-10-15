@@ -1,0 +1,171 @@
+compound,precursor_mz,product_mz,fragmentor_v,collision_energy_v,cell_accel_v,retention_time_min,window_min,polarity,adduct,role
+Acephate,184,143,60,5,4,1.25,1,positive,,quantifier
+Acephate,184,95,60,20,4,1.25,1,positive,,qualifier
+Acequinocyl,402.3,343.2,90,10,4,8.45,1,positive,,quantifier
+Acequinocyl,402.3,189.1,90,41,4,8.45,1,positive,,qualifier
+Acequinocyl,385.3,189.1,90,41,4,8.45,1,positive,,qualifier
+Acetamiprid,223,126.1,100,20,3,3.48,1,positive,,quantifier
+Acetamiprid,223,90.1,100,35,3,3.48,1,positive,,qualifier
+Aflatoxin B1,313.1,285.1,130,20,3,3.60,2,positive,,quantifier
+Aflatoxin B1,313.1,241.1,130,35,3,3.60,2,positive,,qualifier
+Aflatoxin B2,315.1,287.1,130,25,3,3.40,2,positive,,quantifier
+Aflatoxin B2,315.1,259.1,130,25,3,3.40,2,positive,,qualifier
+Aflatoxin G1,329.1,311.1,130,20,3,3.35,2,positive,,quantifier
+Aflatoxin G1,329.1,243.1,130,25,3,3.35,2,positive,,qualifier
+Aflatoxin G2,331.1,285.1,130,25,3,3.25,2,positive,,quantifier
+Aflatoxin G2,331.1,245.1,130,30,3,3.25,2,positive,,qualifier
+Aldicarb,116,89.1,50,4,3,3.57,1,positive,,quantifier
+Aldicarb,116,70.1,50,4,3,3.57,1,positive,,qualifier
+Avermectin B1a,890.5,567.1,160,8,4,7.01,1,positive,,quantifier
+Avermectin B1a,890.5,305.1,160,28,4,7.01,1,positive,,qualifier
+Avermectin B1a,890.5,145,160,45,4,7.01,1,positive,,qualifier
+Avermectin B1b,876.6,553.2,160,7,4,6.7,4,positive,,quantifier
+Avermectin B1b,876.6,291.1,160,15,4,6.7,4,positive,,qualifier
+Azoxystrobin,404,372.2,100,10,3,4.66,1,positive,,quantifier
+Azoxystrobin,404,344,100,25,3,4.66,1,positive,,qualifier
+Bifenazate,301.1,198.2,80,5,3,4.7,1,positive,,quantifier
+Bifenazate,301.1,170.1,80,15,3,4.7,1,positive,,qualifier
+Bifenthrin,440.1599,181.1012,90,5,5,7.65,1,positive,,quantifier
+Bifenthrin,440.1599,166,90,20,5,7.65,1,positive,,qualifier
+Boscalid,343.0399,307.0633,140,12,5,4.59,1,positive,,quantifier
+Boscalid,343.0399,271,140,28,5,4.59,1,positive,,qualifier
+Carbaryl,202,145,70,0,3,3.92,1,positive,,quantifier
+Carbaryl,202,127.1,70,25,3,3.92,1,positive,,qualifier
+Carbofuran,222.1,165.1,90,5,3,3.85,1,positive,,quantifier
+Carbofuran,222.1,123.1,90,20,3,3.85,1,positive,,qualifier
+Chlorantraniliprole,483.9,452.9,100,15,3,4.4,1,positive,,quantifier
+Chlorantraniliprole,483.9,285.9,100,10,3,4.4,1,positive,,qualifier
+Chlorfenapyr,409.2,59,130,20,3,5.95,2,positive,,quantifier
+Chlorfenapyr,409.2,31,130,45,3,5.95,2,positive,,qualifier
+Chlorpyrifos,349.9336,197.9275,100,20,5,6.32,1,positive,,quantifier
+Chlorpyrifos,349.9336,96.9508,100,41,5,6.32,1,positive,,qualifier
+Cinerin I,317.2,107.1,90,16,4,6.18,1,positive,,quantifier
+Cinerin I,317.2,77,90,60,4,6.18,1,positive,,qualifier
+Cinerin I,317.2,149.1,90,4,4,6.18,1,positive,,qualifier
+Cinerin II,361.2,76.8,92,70,4,5.8,2,positive,,quantifier
+Cinerin II,361.2,106.9,92,16,4,5.8,2,positive,,qualifier
+Cinerin II,361.2,149.1,92,4,4,5.8,2,positive,,qualifier
+Clofentezine,303,138,90,10,3,5.51,1,positive,,quantifier
+Clofentezine,303,102.1,90,40,3,5.51,1,positive,,qualifier
+Coumaphos,363,307,125,15,4,5.73,2,positive,,quantifier
+Coumaphos,363,226.9,125,33,4,5.73,2,positive,,qualifier
+Cyfluthrin,453.3,193,90,13,2,7.15,1,positive,,quantifier
+Cyfluthrin,451.3,191,90,13,2,7.15,1,positive,,qualifier
+Cypermethrin,435.3,193,90,16,2,7.2,2,positive,,quantifier
+Cypermethrin,433.3,416.3,90,7,2,7.2,2,positive,,qualifier
+Cypermethrin,433.3,191,90,16,2,7.2,2,positive,,qualifier
+Daminozid,161,143,80,10,2,1.1,2,positive,,quantifier
+Daminozid,161,61.1,80,10,2,1.1,2,positive,,qualifier
+Diazinon,305.1083,169.0794,100,20,5,5.07,1,positive,,quantifier
+Diazinon,305.1083,153.1022,100,20,5,5.07,1,positive,,qualifier
+Dibrom Naled,380.8,127,90,8,3,4.22,1,positive,,quantifier
+Dibrom Naled,378.8,127,90,5,5,4.22,1,positive,,qualifier
+Dichlorvos,220.96,109,110,12,3,3.77,2,positive,,quantifier
+Dichlorvos,220.96,79,110,24,3,3.77,2,positive,,qualifier
+Dimetamorph I,388.1,301.1,145,20,4,4.62,2,positive,,quantifier
+Dimetamorph I,388.1,165,145,32,4,4.62,2,positive,,qualifier
+Dimetamorph II,388.1,301.1,145,20,4,4.80,2,positive,,quantifier
+Dimetamorph II,388.1,165,145,32,4,4.80,2,positive,,qualifier
+Dimethoate,230,199,70,5,3,3.33,1,positive,,quantifier
+Dimethoate,230,125,70,21,3,3.33,1,positive,,qualifier
+Ethoprophos,243,131,90,15,3,4.63,1,positive,,quantifier
+Ethoprophos,243,97,90,30,3,4.63,1,positive,,qualifier
+Etofenprox,394.2,177.2,90,10,3,7.66,1,positive,,quantifier
+Etofenprox,394.2,107.1,90,45,3,7.66,1,positive,,qualifier
+Etoxazole,360.177,141.0146,140,28,5,6.21,1,positive,,quantifier
+Etoxazole,360.177,113.0197,140,50,5,6.21,1,positive,,qualifier
+Fenhexamid,302.1,97.2,145,25,4,4.31,1,positive,,quantifier
+Fenhexamid,302.1,55.1,145,45,4,4.31,1,positive,,qualifier
+Fenoxycarb,302.1,116.1,100,5,3,5.03,1,positive,,quantifier
+Fenoxycarb,302.1,88.1,100,15,3,5.03,1,positive,,qualifier
+Fenpyroximate,422.1,366.2,130,15,3,6.56,1,positive,,quantifier
+Fenpyroximate,422.1,135.1,130,30,3,6.56,1,positive,,qualifier
+Fipronil,436.9,332,100,18,2,4.69,1,negative,,quantifier
+Fipronil,434.9,330,100,18,2,4.69,1,negative,,qualifier
+Fipronil,434.9,250.1,100,30,2,4.69,1,negative,,qualifier
+Flonicamid,230,203,120,15,2,2.16,1,positive,,quantifier
+Flonicamid,230,174,120,20,3,2.16,1,positive,,qualifier
+Fludioxonil,229,185,144,13,3,4.35,1,positive,,quantifier
+Fludioxonil,229,158,144,25,3,4.35,1,positive,,qualifier
+Hexythiazox,353,228.1,90,10,3,6.63,1,positive,,quantifier
+Hexythiazox,353,168.1,90,25,3,6.63,1,positive,,qualifier
+Imazalil,297,201,120,15,3,4.01,2,positive,,quantifier
+Imazalil,297,159,120,20,7,4.01,2,positive,,qualifier
+Imidacloprid,256,209.1,90,16,2,3.35,1,positive,,quantifier
+Imidacloprid,256,175.1,90,20,2,3.35,1,positive,,qualifier
+Jasmolin I,331.2,76.9,90,60,3,6,4,positive,,quantifier
+Jasmolin I,331.2,106.9,90,20,3,6,4,positive,,qualifier
+Jasmolin I,331.2,163.0,90,4,3,6,4,positive,,qualifier
+Jasmolin II,375.2,76.8,95,76,3,6,4,positive,,quantifier
+Jasmolin II,375.2,106.9,95,24,3,6,4,positive,,qualifier
+Jasmolin II,375.2,163.2,95,4,3,6,4,positive,,qualifier
+Kresoxim methyl,314.1,267.1,80,0,3,5.22,1,positive,,quantifier
+Kresoxim methyl,314.1,222.2,80,10,3,5.22,1,positive,,qualifier
+Malathion,331.0433,126.9,80,5,5,4.68,1,positive,,quantifier
+Malathion,331.0433,99,80,10,5,4.68,1,positive,,qualifier
+Metalaxyl,280.1,220.2,100,10,3,4.15,1,positive,,quantifier
+Metalaxyl,280.1,160.1,100,20,3,4.15,1,positive,,qualifier
+Methiocarb,226.1,169.1,70,0,7,4.43,1,positive,,quantifier
+Methiocarb,226.1,121.1,70,15,3,4.43,1,positive,,qualifier
+Methomyl,162.9,106.1,60,5,3,1.97,1,positive,,quantifier
+Methomyl,162.9,88.1,60,0,3,1.97,1,positive,,qualifier
+Methyl-Parathion,264,232,140,18,2,4.70,1,positive,,quantifier
+Methyl-Parathion,264,125,140,24,2,4.70,1,positive,,qualifier
+Mevinphos,225,192.9,60,5,4,3.2,2,positive,,quantifier
+Mevinphos,225,126.9,60,17,4,3.2,2,positive,,qualifier
+MGK-264,276.2,210.1,100,12,4,5.4,2,positive,,quantifier
+MGK-264,276.2,98,100,28,4,5.4,2,positive,,qualifier
+Myclobutanil,289.1,125,110,35,3,4.64,1,positive,,quantifier
+Myclobutanil,289.1,70.1,110,15,7,4.64,1,positive,,qualifier
+Ochratoxin A,404.1,238.9,130,26,3,4.14,2,positive,,quantifier
+Ochratoxin A,404.1,220.9,130,32,3,4.14,2,positive,,qualifier
+Oxamyl,237,90.1,60,0,3,1.79,1,positive,,quantifier
+Oxamyl,237,72.1,60,15,3,1.79,1,positive,,qualifier
+Paclobutrazol,294.1,125,110,40,3,4.41,1,positive,,quantifier
+Paclobutrazol,294.1,70.1,110,20,7,4.41,1,positive,,qualifier
+Permethrin,391.09,355,120,5,3,7.55,2,positive,,quantifier
+Permethrin,391.09,183,120,5,3,7.55,2,positive,,qualifier
+Permethrin,408.1,183,72,20,3,7.55,2,positive,[M+NH4]+,qualifier
+Permethrin,408.1,355.1,72,4,3,7.55,2,positive,[M+NH4]+,qualifier
+Phosmet,317.9,160,80,10,3,4.71,1,positive,,quantifier
+Phosmet,317.9,133,80,40,3,4.71,1,positive,,qualifier
+Piperonyl butoxide,356.2,177.1,90,5,3,5.92,1,positive,,quantifier
+Piperonyl butoxide,356.2,119.1,90,35,3,5.92,1,positive,,qualifier
+Prallethrin,301.18,169,90,5,3,5.45,2,positive,,quantifier
+Prallethrin,301.18,105,90,20,3,5.45,2,positive,,qualifier
+Propiconazole,342.1,159,130,32,2,5.34,1,positive,,quantifier
+Propiconazole,342.1,69.1,130,16,2,5.34,1,positive,,qualifier
+Propoxur,210,168,60,5,3,3.63,1,positive,,quantifier
+Propoxur,210,111,60,10,3,3.63,1,positive,,qualifier
+Pyrethrin I,329.21,161,90,5,3,6.36,1,positive,,quantifier
+Pyrethrin I,329.21,143,90,20,3,6.36,1,positive,,qualifier
+Pyrethrin I,329.21,133,90,20,3,6.36,1,positive,,qualifier
+Pyrethrin II,373.2,161,102,2,3,5.8,3,positive,,quantifier
+Pyrethrin II,373.2,133.1,102,24,3,5.8,3,positive,,qualifier
+Pyrethrin II,373.2,77,102,98,3,5.8,3,positive,,qualifier
+Pyridaben,365.1,309.1,90,4,2,7.01,1,positive,,quantifier
+Pyridaben,365.1,147.2,90,20,2,7.01,1,positive,,qualifier
+Pyridaben,365.1,117.1,90,60,2,7.01,1,positive,,qualifier
+Spinetoram J,748.5,142.1,165,26,3,5.45,2,positive,,quantifier
+Spinetoram J,748.5,98.1,165,50,3,5.45,2,positive,,qualifier
+Spinetoram L,760.5,142.1,165,26,3,5.90,2,positive,,quantifier
+Spinetoram L,760.5,98.1,165,50,3,5.90,2,positive,,qualifier
+Spinosyn A,732.5,142.1,160,28,2,5.55,1,positive,,quantifier
+Spinosyn A,732.5,98.1,160,60,2,5.55,1,positive,,qualifier
+Spinosyn D,746.5,142.1,160,35,2,5.92,1,positive,,quantifier
+Spinosyn D,746.5,98,160,55,2,5.92,1,positive,,qualifier
+Spiromesifen,388.2,273,80,6,2,6.12,1,positive,,quantifier
+Spiromesifen,388.2,255,80,26,2,6.12,1,positive,,qualifier
+Spirotetramat,374.2,330.2,110,12,5,4.78,1,positive,,quantifier
+Spirotetramat,374.2,302.2,110,12,5,4.78,1,positive,,qualifier
+Spirotetramat,374.2,216.1,110,36,5,4.78,1,positive,,qualifier
+Spiroxamine,298.28,144.1,120,16,4,4.2,2,positive,,quantifier
+Spiroxamine,298.28,100.1,120,32,4,4.2,2,positive,,qualifier
+Tebuconazole,308.1,124.9,120,47,2,5,1,positive,,quantifier
+Tebuconazole,308.1,70,120,40,2,5,1,positive,,qualifier
+Thiacloprid,253,126,100,16,2,3.68,1,positive,,quantifier
+Thiacloprid,253,90,100,40,2,3.68,1,positive,,qualifier
+Thiamethoxam,292.03,211.1,80,8,2,2.81,1,positive,,quantifier
+Thiamethoxam,292.03,181.1,80,20,2,2.81,1,positive,,qualifier
+Trifloxystrobin,409.1,186,100,12,2,5.69,1,positive,,quantifier
+Trifloxystrobin,409.1,145,100,52,2,5.69,1,positive,,qualifier

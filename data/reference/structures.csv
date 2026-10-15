@@ -1,0 +1,81 @@
+name,cid,smiles,coords,note,file
+Chlormequat chloride,13837,C[N+](C)(C)CCCl,pubchem 3d,,structures/Chlormequat_Chloride.sdf
+Daminozide,15331,CN(C)NC(=O)CCC(=O)O,pubchem 3d,,structures/Daminozide.sdf
+Acephate,1982,CC(=O)NP(=O)(OC)SC,pubchem 3d,,structures/Acephate.sdf
+Oxamyl,31657,CNC(=O)ON=C(C(=O)N(C)C)SC,pubchem 3d,,structures/Oxamyl.sdf
+Flonicamid,9834513,C1=CN=CC(=C1C(F)(F)F)C(=O)NCC#N,pubchem 3d,,structures/Flonicamid.sdf
+Thiamethoxam,5821911,CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl,pubchem 3d,,structures/Thiamethoxam.sdf
+Methomyl,4109,CC(=NOC(=O)NC)SC,pubchem 3d,,structures/Methomyl.sdf
+Imidacloprid,86287518,C1CN(/C(=N/[N+](=O)[O-])/N1)CC2=CN=C(C=C2)Cl,pubchem 3d,,structures/Imidacloprid.sdf
+Dimethoate,3082,CNC(=O)CSP(=S)(OC)OC,pubchem 3d,,structures/Dimethoate.sdf
+Acetamiprid,213021,CC(=NC#N)N(C)CC1=CN=C(C=C1)Cl,pubchem 3d,,structures/Acetamiprid.sdf
+Aflatoxin G2,2724362,COC1=C2C3=C(C(=O)OCC3)C(=O)OC2=C4[C@@H]5CCO[C@@H]5OC4=C1,pubchem 3d,,structures/Aflatoxin-G2.sdf
+Aflatoxin G1,2724361,COC1=C2C3=C(C(=O)OCC3)C(=O)OC2=C4[C@@H]5C=CO[C@@H]5OC4=C1,pubchem 3d,,structures/Aflatoxin-G1.sdf
+Aflatoxin B2,2724360,COC1=C2C3=C(C(=O)CC3)C(=O)OC2=C4[C@@H]5CCO[C@@H]5OC4=C1,pubchem 3d,,structures/Aflatoxin-B2.sdf
+Aflatoxin B1,186907,COC1=C2C3=C(C(=O)CC3)C(=O)OC2=C4[C@@H]5C=CO[C@@H]5OC4=C1,pubchem 3d,,structures/Aflatoxin-B1.sdf
+Dichlorvos,3039,COP(=O)(OC)OC=C(Cl)Cl,pubchem 3d,,structures/Dichlorvos.sdf
+Propoxur,4944,CC(C)OC1=CC=CC=C1OC(=O)NC,pubchem 3d,,structures/Propoxur.sdf
+Carbaryl,6129,CNC(=O)OC1=CC=CC2=CC=CC=C21,pubchem 3d,,structures/Carbaryl.sdf
+Imazalil,37175,C=CCOC(CN1C=CN=C1)C2=C(C=C(C=C2)Cl)Cl,pubchem 3d,,structures/Imazalil.sdf
+Azadirachtin,5281303,C/C=C(\C)/C(=O)O[C@H]1C[C@H]([C@]2(CO[C@@H]3[C@@H]2[C@]14CO[C@@]([C@H]4[C@]([C@@H]3O)(C)[C@@]56[C@@H]7C[C@H]([C@@]5(O6)C)[C@]8(C=CO[C@H]8O7)O)(C(=O)OC)O)C(=O)OC)OC(=O)C,rdkit etkdg+mmff,,structures/Azadirachtin.sdf
+Metalaxyl,42586,CC1=C(C(=CC=C1)C)N(C(C)C(=O)OC)C(=O)COC,pubchem 3d,,structures/Metalaxyl.sdf
+Naled,4420,COP(=O)(OC)OC(C(Cl)(Cl)Br)Br,pubchem 3d,,structures/Naled.sdf
+Chlorantraniliprole,11271640,CC1=CC(=CC(=C1NC(=O)C2=CC(=NN2C3=C(C=CC=N3)Cl)Br)C(=O)NC)Cl,pubchem 3d,,structures/Chlorantraniliprole.sdf
+Phosmet,12901,COP(=S)(OC)SCN1C(=O)C2=CC=CC=C2C1=O,pubchem 3d,,structures/Phosmet.sdf
+Ochratoxin A,442530,C[C@@H]1CC2=C(C=C(C(=C2C(=O)O1)O)C(=O)N[C@@H](CC3=CC=CC=C3)C(=O)O)Cl,pubchem 3d,,structures/Ochratoxin-A.sdf
+Azoxystrobin,3034285,CO/C=C(\C1=CC=CC=C1OC2=NC=NC(=C2)OC3=CC=CC=C3C#N)/C(=O)OC,pubchem 3d,,structures/Azoxystrobin.sdf
+Fludioxonil,86398,C1=CC(=C2C(=C1)OC(O2)(F)F)C3=CNC=C3C#N,pubchem 3d,,structures/Fludioxonil.sdf
+Methiocarb,16248,CC1=CC(=CC(=C1SC)C)OC(=O)NC,pubchem 3d,,structures/Methiocarb.sdf
+Boscalid,213013,C1=CC=C(C(=C1)C2=CC=C(C=C2)Cl)NC(=O)C3=C(N=CC=C3)Cl,pubchem 3d,,structures/Boscalid.sdf
+Malathion,4004,CCOC(=O)CC(C(=O)OCC)SP(=S)(OC)OC,pubchem 3d,,structures/Malathion.sdf
+Paclobutrazol,73671,CC(C)(C)[C@@H]([C@H](CC1=CC=C(C=C1)Cl)N2C=NC=N2)O,pubchem 3d,,structures/Paclobutrazol.sdf
+Myclobutanil,6336,CCCCC(CN1C=NC=N1)(C#N)C2=CC=C(C=C2)Cl,pubchem 3d,,structures/Myclobutanil.sdf
+Bifenazate,176879,CC(C)OC(=O)NNC1=C(C=CC(=C1)C2=CC=CC=C2)OC,pubchem 3d,,structures/Bifenazate.sdf
+Spirotetramat,9969573,CCOC(=O)OC1=C(C(=O)NC12CCC(CC2)OC)C3=C(C=CC(=C3)C)C,pubchem 3d,,structures/Spirotetramat.sdf
+Fipronil,3352,C1=C(C=C(C(=C1Cl)N2C(=C(C(=N2)C#N)S(=O)C(F)(F)F)N)Cl)C(F)(F)F,pubchem 3d,,structures/Fipronil.sdf
+Fenoxycarb,51605,CCOC(=O)NCCOC1=CC=C(C=C1)OC2=CC=CC=C2,pubchem 3d,,structures/Fenoxycarb.sdf
+Jasmolin I,12304687,CC/C=C\CC1=C([C@H](CC1=O)OC(=O)[C@@H]2[C@H](C2(C)C)C=C(C)C)C,pubchem 3d,,structures/Jasmolin-I.sdf
+Kresoxim-methyl,6112114,CC1=CC=CC=C1OCC2=CC=CC=C2/C(=N\OC)/C(=O)OC,pubchem 3d,,structures/Kresoxim-methyl.sdf
+Tebuconazole,86102,CC(C)(C)C(CCC1=CC=C(C=C1)Cl)(CN2C=NC=N2)O,pubchem 3d,,structures/Tebuconazole.sdf
+Spinosyn A,443059,CC[C@H]1CCC[C@@H]([C@H](C(=O)C2=C[C@H]3[C@@H]4C[C@@H](C[C@H]4C=C[C@H]3[C@@H]2CC(=O)O1)O[C@H]5[C@@H]([C@@H]([C@H]([C@@H](O5)C)OC)OC)OC)C)O[C@H]6CC[C@@H]([C@H](O6)C)N(C)C,rdkit etkdg+mmff,,structures/Spinosad-A.sdf
+Diazinon,3017,CCOP(=S)(OCC)OC1=NC(=NC(=C1)C)C(C)C,pubchem 3d,,structures/Diazinon.sdf
+Propiconazole,43234,CCCC1COC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)Cl)Cl,pubchem 3d,,structures/Propiconazole.sdf
+Clofentezine,73670,C1=CC=C(C(=C1)C2=NN=C(N=N2)C3=CC=CC=C3Cl)Cl,pubchem 3d,,structures/Clofentezine.sdf
+Chlorfenapyr,91778,CCOCN1C(=C(C(=C1C(F)(F)F)Br)C#N)C2=CC=C(C=C2)Cl,pubchem 3d,,structures/Chlorphenapyr.sdf
+Spinosyn D,183094,CC[C@H]1CCC[C@@H]([C@H](C(=O)C2=C[C@H]3[C@@H]4C[C@@H](C[C@H]4C(=C[C@H]3[C@@H]2CC(=O)O1)C)O[C@H]5[C@@H]([C@@H]([C@H]([C@@H](O5)C)OC)OC)OC)C)O[C@H]6CC[C@@H]([C@H](O6)C)N(C)C,rdkit etkdg+mmff,,structures/Spinosad-D.sdf
+Trifloxystrobin,11664966,C/C(=N\OCC1=CC=CC=C1/C(=N\OC)/C(=O)OC)/C2=CC(=CC=C2)C(F)(F)F,pubchem 3d,,structures/Trifloxystrobin.sdf
+Prallethrin,9839306,CC1=C(C(=O)CC1OC(=O)C2C(C2(C)C)C=C(C)C)CC#C,pubchem 3d,,structures/Prallethrin.sdf
+Jasmolin II,12304690,CC/C=C\CC1=C([C@H](CC1=O)OC(=O)[C@@H]2[C@H](C2(C)C)/C=C(\C)/C(=O)OC)C,pubchem 3d,,structures/Jasmolin-II.sdf
+Pyrethrin II,5281555,CC1=C(C(=O)C[C@@H]1OC(=O)[C@@H]2[C@H](C2(C)C)/C=C(\C)/C(=O)OC)C/C=C\C=C,pubchem 3d,,structures/Pyrethrin-II.sdf
+Cinerin II,5281548,C/C=C\CC1=C([C@H](CC1=O)OC(=O)[C@@H]2[C@H](C2(C)C)/C=C(\C)/C(=O)OC)C,pubchem 3d,,structures/Cinerin-II.sdf
+Piperonyl butoxide,5794,CCCCOCCOCCOCC1=CC2=C(C=C1CCC)OCO2,pubchem 3d,,structures/Piperonyl-butoxide.sdf
+Chlorpyrifos,2730,CCOP(=S)(OCC)OC1=NC(=C(C=C1Cl)Cl)Cl,pubchem 3d,,structures/Chlorpyrifos.sdf
+Hexythiazox,13218777,C[C@H]1[C@@H](SC(=O)N1C(=O)NC2CCCCC2)C3=CC=C(C=C3)Cl,pubchem 3d,,structures/Hexythiazox.sdf
+Etoxazole,153974,CCOC1=C(C=CC(=C1)C(C)(C)C)C2COC(=N2)C3=C(C=CC=C3F)F,pubchem 3d,,structures/Etoxazole.sdf
+Spiromesifen,9907412,CC1=CC(=C(C(=C1)C)C2=C(C3(CCCC3)OC2=O)OC(=O)CC(C)(C)C)C,pubchem 3d,,structures/Spiromesifen.sdf
+Cinerin I,5281547,C/C=C\CC1=C([C@H](CC1=O)OC(=O)[C@@H]2[C@H](C2(C)C)C=C(C)C)C,pubchem 3d,,structures/Cinerin-I.sdf
+Cyfluthrin,104926,CC1(C(C1C(=O)OC(C#N)C2=CC(=C(C=C2)F)OC3=CC=CC=C3)C=C(Cl)Cl)C,pubchem 3d,,structures/Cyfluthrin.sdf
+Fenpyroximate,9576412,CC1=NN(C(=C1/C=N/OCC2=CC=C(C=C2)C(=O)OC(C)(C)C)OC3=CC=CC=C3)C,pubchem 3d,,structures/Fenpyroximate.sdf
+Pyrethrin I,5281045,CC1=C(C(=O)C[C@@H]1OC(=O)[C@@H]2[C@H](C2(C)C)C=C(C)C)C/C=C\C=C,pubchem 3d,,structures/Pyrethrin-I.sdf
+Cypermethrin,2912,CC1(C(C1C(=O)OC(C#N)C2=CC(=CC=C2)OC3=CC=CC=C3)C=C(Cl)Cl)C,pubchem 3d,,structures/Cypermethrin.sdf
+Pyridaben,91754,CC(C)(C)C1=CC=C(C=C1)CSC2=C(C(=O)N(N=C2)C(C)(C)C)Cl,pubchem 3d,,structures/Pyridaben.sdf
+Avermectin B1b,6858005,C[C@H]1/C=C/C=C/2\CO[C@H]3[C@@]2([C@@H](C=C([C@H]3O)C)C(=O)O[C@H]4C[C@@H](C/C=C(/[C@H]1O[C@H]5C[C@@H]([C@H]([C@@H](O5)C)O[C@H]6C[C@@H]([C@H]([C@@H](O6)C)O)OC)OC)\C)O[C@]7(C4)C=C[C@@H]([C@H](O7)C(C)C)C)O,rdkit etkdg+mmff,,structures/Abamectin_B1b.sdf
+Permethrin,40326,CC1(C(C1C(=O)OCC2=CC(=CC=C2)OC3=CC=CC=C3)C=C(Cl)Cl)C,pubchem 3d,,structures/Permethrins.sdf
+Avermectin B1a,6434889,CC[C@H](C)[C@@H]1[C@H](C=C[C@@]2(O1)C[C@@H]3C[C@H](O2)C/C=C(/[C@H]([C@H](/C=C/C=C/4\CO[C@H]5[C@@]4([C@@H](C=C([C@H]5O)C)C(=O)O3)O)C)O[C@H]6C[C@@H]([C@H]([C@@H](O6)C)O[C@H]7C[C@@H]([C@H]([C@@H](O7)C)O)OC)OC)\C)C,rdkit etkdg+mmff,,structures/Abamectin_B1a.sdf
+Etofenprox,71245,CCOC1=CC=C(C=C1)C(C)(C)COCC2=CC(=CC=C2)OC3=CC=CC=C3,pubchem 3d,,structures/Etofenprox.sdf
+Bifenthrin,6442842,CC1=C(C=CC=C1C2=CC=CC=C2)COC(=O)[C@@H]3[C@@H](C3(C)C)/C=C(/C(F)(F)F)\Cl,pubchem 3d,,structures/Bifenthrin.sdf
+Acequinocyl,93315,CCCCCCCCCCCCC1=C(C(=O)C2=CC=CC=C2C1=O)OC(=O)C,pubchem 3d,,structures/Acequinocyl.sdf
+Azoxystrobin-D4,71313610,[2H]C1=C(C(=C(C(=C1[2H])C#N)OC2=CC(=NC=N2)OC3=CC=CC=C3/C(=C\OC)/C(=O)OC)[2H])[2H],pubchem 3d,,structures/Azoxystrobin-D4.sdf
+Bifenazate-D5,169434455,[2H]C1=C(C(=C(C(=C1[2H])[2H])C2=CC(=C(C=C2)OC)NNC(=O)OC(C)C)[2H])[2H],pubchem 3d,,structures/Bifenazate-D5.sdf
+Carbaryl-D7,45038548,[2H]C1=C(C(=C2C(=C1[2H])C(=C(C(=C2OC(=O)NC)[2H])[2H])[2H])[2H])[2H],pubchem 3d,,structures/Carbaryl-D7.sdf
+Daminozide-D4,131708648,[2H]C([2H])(C(=O)NN(C)C)C([2H])([2H])C(=O)O,pubchem 3d,,structures/Daminozide-D4.sdf
+Dimethoate-D6,71777128,[2H]C([2H])([2H])OP(=S)(OC([2H])([2H])[2H])SCC(=O)NC,pubchem 3d,,structures/Dimethoate-D6.sdf
+Etoxazole-D5,163409211,[2H]C([2H])([2H])C([2H])([2H])OC1=C(C=CC(=C1)C(C)(C)C)C2COC(=N2)C3=C(C=CC=C3F)F,pubchem 3d,,structures/Etoxazole-D5.sdf
+Imazalil-D5,71749458,[2H]C(=C([2H])C([2H])([2H])OC(CN1C=CN=C1)C2=C(C=C(C=C2)Cl)Cl)[2H].OS(=O)(=O)O,rdkit etkdg+mmff,,structures/Imazilil-D5.sdf
+Imidacloprid-D4,16212231,[2H]C1(C(N(C(=N1)N[N+](=O)[O-])CC2=CN=C(C=C2)Cl)([2H])[2H])[2H],pubchem 3d,,structures/Imidicloprid-D4.sdf
+Ivermectin-D2,168310448,[H][C@@]1(C([C@@H]([C@H](O[C@@]12C[C@@H]3C[C@H](O2)C/C=C(/[C@H]([C@H](/C=C/C=C/4\CO[C@H]5[C@@]4([C@@H](C=C([C@H]5O)C)C(=O)O3)O)C)O[C@H]6C[C@@H]([C@H]([C@@H](O6)C)O[C@H]7C[C@@H]([C@H]([C@@H](O7)C)O)OC)OC)\C)[C@@H](C)CC)C)[2H])[2H],rdkit etkdg+mmff,,structures/Ivermectin-D2.sdf
+Malathion-D10,90472138,[2H]C([2H])([2H])C([2H])([2H])OC(=O)CC(C(=O)OC([2H])([2H])C([2H])([2H])[2H])SP(=S)(OC)OC,pubchem 3d,,structures/Malathion-D10.sdf
+Myclobutanil-D4,6336,CCCCC(CN1C=NC=N1)(C#N)C2=CC=C(C=C2)Cl,pubchem 3d,parent structure: deuterium positions unknown,structures/Myclobutanil-D4.sdf
+Permethrin-D5,71751437,[2H]C1=C(C(=C(C(=C1[2H])[2H])OC2=CC=CC(=C2)COC(=O)C3C(C3(C)C)C=C(Cl)Cl)[2H])[2H],pubchem 3d,,structures/Permethrins-D5.sdf
+Pyridaben-D13,139024788,[2H]C1=C(C(=C(C(=C1CSC2=C(C(=O)N(N=C2)C(C)(C)C)Cl)[2H])[2H])C(C([2H])([2H])[2H])(C([2H])([2H])[2H])C([2H])([2H])[2H])[2H],pubchem 3d,,structures/Pyridaben-D13.sdf
+Tebuconazole-D9,71752338,[2H]C([2H])([2H])C(C([2H])([2H])[2H])(C([2H])([2H])[2H])C(CCC1=CC=C(C=C1)Cl)(CN2C=NC=N2)O,pubchem 3d,,structures/Tebuconazole-D9.sdf

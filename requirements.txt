@@ -1,0 +1,11 @@
+# For a hosted copy (Streamlit Community Cloud reads this file; Python 3.12). The app puts src/ on the path
+# itself, so the package does not need installing there. Locally: pip install -e ".[app,dev]".
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.6
+pydantic==2.13.5
+PyYAML==6.0.3
+streamlit==1.65.0
+plotly==7.1.0
+rdkit==2026.9.1
+py3Dmol==2.5.5

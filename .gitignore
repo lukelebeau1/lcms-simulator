@@ -1,0 +1,10 @@
+# A lab's own files go in data/lab and never into version control.
+data/lab/*
+!data/lab/README.md
+
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+out/
+data/reference/*.pdf

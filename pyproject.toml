@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lcms-sim"
+version = "0.1.0"
+description = "Teaching and troubleshooting simulator for an LC-MS/MS pesticide and mycotoxin workflow. Not validated for reporting."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Luke LeBeau" }]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "pydantic>=2.5",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30", "plotly>=5.18", "rdkit>=2023.9", "py3Dmol>=2.0"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
