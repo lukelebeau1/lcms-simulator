@@ -1,5 +1,6 @@
-# For a hosted copy (Streamlit Community Cloud reads this file; Python 3.12). The app puts src/ on the path
-# itself, so the package does not need installing there. Locally: pip install -e ".[app,dev]".
+# For a hosted copy (Streamlit Community Cloud reads this file; the hosted copy runs Python 3.14, development 3.12;
+# system libraries for RDKit drawing are in packages.txt). The app puts src/ on the path itself, so the package does
+# not need installing there. Locally: pip install -e ".[app,dev]".
 numpy==2.5.3
 scipy==1.18.1
 pandas==3.0.6

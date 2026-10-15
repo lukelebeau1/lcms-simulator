@@ -6,7 +6,8 @@ peak area: every pipetting step, the column, the spray, both quadrupoles, the co
 Then break something (a pipette, the dwell volume, the mobile phase pH, the internal standard) and watch which
 results move and which checks would catch it.
 
-**Live app:** _link to come_
+**Live app:** [lcms-simulator-lebeau.streamlit.app](https://lcms-simulator-lebeau.streamlit.app/) (if nobody has
+used it for a while it takes a minute to wake up)
 
 > **Simulated.** Nothing here is validated for reporting. The outputs must never be used on a certificate of
 > analysis or in place of a laboratory's own method validation.
