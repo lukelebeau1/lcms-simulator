@@ -11,7 +11,20 @@ results move and which checks would catch it.
 > **Simulated.** Nothing here is validated for reporting. The outputs must never be used on a certificate of
 > analysis or in place of a laboratory's own method validation.
 
-<!-- screenshots: docs/img/ -->
+![Follow the analyte: one compound in one injection, container by container, with the share that arrives at each](docs/img/follow.png)
+
+<table>
+<tr>
+<td width="33%"><a href="docs/img/quadrupole.png"><img src="docs/img/quadrupole.png" alt="How a quadrupole filters: the saddle-shaped field between the rods"></a></td>
+<td width="33%"><a href="docs/img/acquisition.png"><img src="docs/img/acquisition.png" alt="Acquisition: concurrent transitions, dwell and points per peak across the dynamic MRM schedule"></a></td>
+<td width="33%"><a href="docs/img/fault_lab.png"><img src="docs/img/fault_lab.png" alt="Fault lab: a calibration stock error and the uniform low bias it leaves on samples"></a></td>
+</tr>
+<tr>
+<td>The quadrupole, one step at a time</td>
+<td>Dynamic MRM: dwell and points per peak</td>
+<td>Fault lab: inject a fault, read its symptoms</td>
+</tr>
+</table>
 
 ## What it does
 

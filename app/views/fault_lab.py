@@ -110,7 +110,7 @@ with c2:
     fig.add_hline(y=1.0, line=dict(color="#888", dash="dot"))
     fig.update_layout(title="Reported / true against retention time", xaxis_title="RT (min)",
                       yaxis_title="reported / true", height=420, margin=dict(l=10, r=10, t=40, b=10),
-                      legend=dict(orientation="h"))
+                      legend=dict(orientation="h", y=-0.22, yanchor="top"))
     chart(fig, width="stretch")
     scope_note = ("the pattern across compounds is the diagnosis" if f.scope == "compound"
                   else "every compound moves together, as a dilution would")

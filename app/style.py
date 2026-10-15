@@ -21,9 +21,10 @@ SCREEN, SCREEN_GRID = "#3A2C48", "#574066"
 # (it merges with teal under deuteranopia).
 SCREEN_COLORWAY = [LILAC, SAFFRON, TEAL_LIGHT, CREAM, PALE]
 
-_axis = dict(gridcolor=SCREEN_GRID, zerolinecolor="#7A6690", linecolor="#7A6690", tickcolor="#7A6690",
+_axis = dict(automargin=True, gridcolor=SCREEN_GRID, zerolinecolor="#7A6690", linecolor="#7A6690", tickcolor="#7A6690",
              tickfont=dict(family="PT Mono, monospace", size=11, color=PALE),
              title=dict(font=dict(family="PT Sans Narrow, sans-serif", size=14, color=CREAM)))
+_axis3d = {k: v for k, v in _axis.items() if k != "automargin"}   # 3D axes take no automargin
 pio.templates["room"] = go.layout.Template(layout=dict(
     paper_bgcolor=SCREEN, plot_bgcolor=SCREEN, colorway=SCREEN_COLORWAY,
     font=dict(family="PT Sans Narrow, sans-serif", size=13, color=CREAM),
@@ -34,7 +35,7 @@ pio.templates["room"] = go.layout.Template(layout=dict(
     coloraxis=dict(colorbar=dict(tickfont=dict(color=PALE), title=dict(font=dict(color=CREAM)))),
     annotationdefaults=dict(font=dict(color=CREAM)),
     polar=dict(bgcolor=SCREEN), ternary=dict(bgcolor=SCREEN),
-    scene=dict(xaxis=_axis, yaxis=_axis, zaxis=_axis, bgcolor=SCREEN),
+    scene=dict(xaxis=_axis3d, yaxis=_axis3d, zaxis=_axis3d, bgcolor=SCREEN),
 ))
 pio.templates.default = "room"
 
@@ -91,7 +92,9 @@ CSS = f"""
 .st-key-rail [data-testid="stColumn"]:has(.st-key-rail-here) > div {{ background:var(--saffron); }}
 .st-key-rail [data-testid="stMarkdownContainer"] p {{ font-family:"PT Mono", monospace; font-size:.85rem; }}
 .st-key-rail [data-testid="stMarkdownContainer"] strong {{ font-family:"PT Sans Narrow", sans-serif; }}
-.st-key-rail [data-testid="stPageLink"] p {{ font-size:.8rem; }}
+.st-key-rail [data-testid="stPageLink"] p {{ font-family:"PT Sans Narrow", sans-serif; font-size:.9rem;
+  white-space:nowrap; }}
+.st-key-rail [data-testid="stPageLink"] a {{ padding-left:0; }}
 </style>
 """
 
