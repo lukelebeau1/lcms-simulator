@@ -95,7 +95,7 @@ if h["IS"]:
                              mode="lines+markers", name=f"{highlight} and its IS", line=dict(color="#ef5350", width=2),
                              marker=dict(size=12, color="#ef5350")))
 fig.update_layout(xaxis_title="retention time (min)", yaxis_title="matrix factor (1 = no effect)", height=460,
-                  margin=dict(l=10, r=10, t=20, b=10), legend=dict(orientation="h"),
+                  margin=dict(l=10, r=10, t=20, b=10), legend=dict(orientation="h", y=-0.17, yanchor="top"),
                   yaxis=dict(range=[0, max(1.2, float(np.nanmax(mf)) * 1.05)]))
 chart(fig, width="stretch")
 st.caption(f"Profile: {label}. Retention times from the method's LSS parameters (fitted to its measured retention times).")

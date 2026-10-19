@@ -13,6 +13,7 @@ import streamlit as st  # noqa: E402
 
 from common import (chart, Station, follow_index, inputs, matrix_profile, method_provenance, page, provenance_table,  # noqa: E402
                     recipe, sources_line, targets)
+import style  # noqa: E402
 from ion_stream import TYPICAL_DOWNSTREAM  # noqa: E402
 
 from lcms_sim.io.schemas import TransitionRole  # noqa: E402
@@ -103,15 +104,18 @@ fractions = edited["Fraction"].astype(float).to_numpy()
 remaining = n0 * np.cumprod(fractions)
 counted = float(remaining[-1])
 
+stages = ["Injected", *edited["Stage"]]
 fig = go.Figure(go.Bar(
-    y=["Injected", *edited["Stage"]], x=[n0, *remaining], orientation="h",
-    marker_color=["steelblue"] * len(fractions) + ["crimson"],
+    y=stages, x=[n0, *remaining], orientation="h",
+    marker_color=[style.LILAC] * len(fractions) + [style.SAFFRON],
     text=[f"{v:.3g}" for v in (n0, *remaining)], textposition="outside",
     hovertemplate="%{y}: %{x:.3g}<extra></extra>"))
 lo = math.log10(max(float(remaining.min()), 1.0))
 fig.update_xaxes(type="log", title_text="Molecules or ions left (log scale)", range=[lo - 0.5, math.log10(n0) + 1.2])
 fig.update_yaxes(autorange="reversed")
-fig.update_layout(height=80 + 42 * (len(fractions) + 1), margin=dict(t=10, b=40), template="room")
+# Left margin from the longest stage name at ~7 px per PT Mono character: automargin leaves the longest one cut off.
+fig.update_layout(height=80 + 42 * (len(fractions) + 1), margin=dict(t=10, b=40, l=16 + 7 * max(map(len, stages))),
+                  template="room")
 chart(fig, width="stretch")
 sources_line(("page_2007", "kebarle_verkerk_2009", "matuszewski_2003", "bonfiglio_1999", "king_2000", "dawson_1995",
               "hoffmann_stroobant_2007", "douglas_french_1992"),

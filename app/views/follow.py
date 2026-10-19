@@ -213,9 +213,13 @@ for s in t.stops:
         to_loop *= s.nominal_fraction
     elif s.unit != "area units":
         counted *= s.nominal_fraction
+# Streamlit pulls every markdown block up by 1rem to cancel its last paragraph's margin; this block is a div with no
+# such margin, so it gets one back, or the bar's bottom rule lands on the text's last line. --panel is the page
+# colour (style.py), so the cards scroll under the bar instead of showing through it.
 st.markdown("""<style>
 div[data-testid="stElementContainer"]:has(div.follow-total) {position: sticky; top: 3.75rem; z-index: 99;
-  background: var(--background-color); padding: 4px 0; border-bottom: 1px solid #444;}
+  background: var(--panel); padding: 4px 0; border-bottom: 1px solid var(--seam);}
+div.follow-total {margin-bottom: 1rem;}
 </style>""", unsafe_allow_html=True)
 st.markdown(f'<div class="follow-total"><b>{cmp} in {inj.removeprefix("Column: ")}</b>, {len(cards)} containers. '
             f"By design {100 * to_loop:.3g}% of the ampoule's amount is injected and 1 in {1 / counted:,.0f} of the "

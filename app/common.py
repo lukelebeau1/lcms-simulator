@@ -185,14 +185,17 @@ def plotly_spec(spec: dict, **kwargs) -> None:
     layout = spec.setdefault("layout", {})
     for k in ("paper_bgcolor", "plot_bgcolor"):
         layout.setdefault(k, style.SCREEN)
+    layout.setdefault("font", {}).setdefault("color", style.CREAM)
     st.plotly_chart(_BuiltFigure(spec), theme=None, **kwargs)
 
 
 def chart(fig: go.Figure, **kwargs) -> None:
-    """st.plotly_chart on a screen: the room template, and the background set on the figure itself, because
-    Streamlit fills in any background the layout leaves unset from the page theme (the template's is ignored)."""
+    """st.plotly_chart on a screen: the room template, and the background and base font colour set on the figure
+    itself, because Streamlit fills in any the layout leaves unset from the page theme (the template's are ignored);
+    the page's ink would draw button labels and text marks dark on the dark screen."""
     fig.update_layout(paper_bgcolor=fig.layout.paper_bgcolor or style.SCREEN,
-                      plot_bgcolor=fig.layout.plot_bgcolor or style.SCREEN)
+                      plot_bgcolor=fig.layout.plot_bgcolor or style.SCREEN,
+                      font_color=fig.layout.font.color or style.CREAM)
     st.plotly_chart(fig, theme=None, **kwargs)
 
 

@@ -92,9 +92,9 @@ def rel(p: Path) -> str:
 # ---------------------------------------------------------------------------------------------------------------
 if what == "Quant batch export":
     if data is None:
-        st.info("Upload a batch export, or pick one already in data/lab. MassHunter's wide export (two header rows) "
-                "and long exports (one row per injection and compound: Sciex, Thermo, Waters, or a hand-made table) "
-                "are both read.")
+        st.info(f"Upload a batch export in the sidebar{', or pick one already in data/lab' if LOCAL else ''}. "
+                "MassHunter's wide export (two header rows) and long exports (one row per injection and compound: "
+                "Sciex, Thermo, Waters, or a hand-made table) are both read.")
         st.stop()
     raw = parse(data, name)
     st.subheader("1. What was read")
@@ -166,8 +166,9 @@ if what == "Quant batch export":
 # ---------------------------------------------------------------------------------------------------------------
 elif what == "Transition table":
     if data is None:
-        st.info("Upload the MRM method's transition table (the acquisition method exported as CSV, or any table "
-                "with compound, precursor, product and retention time), or pick one already in data/lab.")
+        st.info("Upload the MRM method's transition table in the sidebar (the acquisition method exported as CSV, or "
+                "any table with compound, precursor, product and retention time)"
+                f"{', or pick one already in data/lab' if LOCAL else ''}.")
         st.stop()
     raw = parse(data, name)
     if raw.layout != "long":

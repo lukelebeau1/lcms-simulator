@@ -91,9 +91,11 @@ rows = [
     ("7 Calibration", "Slope (response per concentration ratio)", None, fit.slope),
     ("8 Back-calculation", "Reported (ug/kg)", true, reported),
 ]
-df = pd.DataFrame(rows, columns=["Stage", "Quantity", "Nominal / expected", "Actual"])
-st.dataframe(df.style.format({"Nominal / expected": "{:.5g}", "Actual": "{:.5g}"}, na_rep="-"),
-             hide_index=True, width="stretch")
+# Formatted as text: st.dataframe draws a missing number as "None" whatever the Styler's na_rep says.
+num = lambda v: "-" if v is None else f"{v:.5g}"  # noqa: E731
+df = pd.DataFrame([(s, q, num(e), num(a)) for s, q, e, a in rows],
+                  columns=["Stage", "Quantity", "Nominal / expected", "Actual"])
+st.dataframe(df, hide_index=True, width="stretch")
 
 bias = reported / true if true else float("nan")
 c1, c2, c3 = st.columns(3)

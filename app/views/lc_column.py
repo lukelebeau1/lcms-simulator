@@ -108,9 +108,11 @@ def build(with_is: bool, focus: str, step: float) -> tuple[dict, list[dict]]:
         data, title = frame_data(f)
         frames.append(dict(name=f"{times[f]:.2f}", data=data, traces=[0, 1, 2], layout=dict(title=dict(text=title))))
 
+    # A two-line title with yanchor "top" puts the first line's baseline, not its top, at y; 20 px down keeps it in.
+    height = max(560, 15 * len(names) + 260)
     fig.update_layout(
-        title=dict(text=title0, font=dict(size=13), x=0.0, y=0.995, yanchor="top"),
-        height=max(560, 15 * len(names) + 260), margin=dict(t=95, b=120), template="room",
+        title=dict(text=title0, font=dict(size=13), x=0.0, y=1 - 20 / height, yanchor="top"),
+        height=height, margin=dict(t=95, b=120), template="room",
         legend=dict(orientation="h", y=1.0, x=1.0, xanchor="right", yanchor="bottom"),
     )
     fig.add_vline(x=L, line_dash="dash", line_color="gray")
@@ -245,10 +247,11 @@ for nm, colr in ((pick_a, "crimson"), (pick_b, "royalblue")):
         fr.add_trace(go.Scatter(x=[xt.loc[nm, "xlogp"]], y=[xt.loc[nm, "rt_median_min"]], mode="markers+text",
                                 text=[nm], textposition="top center", marker=dict(color=colr, size=12), name=nm))
 fr.update_xaxes(title_text="XLogP3 (hydrophobicity)")
-fr.update_yaxes(title_text=f"measured RT (min), {method().short}")
+fr.update_yaxes(title_text="measured RT (min)")
 fr.update_layout(height=340, margin=dict(t=20, b=40, l=10, r=10), template="room", showlegend=False)
 chart(fr, width="stretch")
-st.caption("More hydrophobic, later: the main trend. Off the trend: bases charged at pH 3 elute early (imazalil, "
+st.caption(f"RT as measured in {method().short}. "
+           "More hydrophobic, later: the main trend. Off the trend: bases charged at pH 3 elute early (imazalil, "
            "spinosyns), very large molecules late (avermectins), and log P estimates have their own errors "
            "(docs/retention_chemistry.md, docs/lc.md).")
 

@@ -117,7 +117,7 @@ c4.metric("Ion ratios at risk (>5% fail)", f"{len(risky)} of {len(df)}")
 bar = go.Figure(go.Bar(x=df["Analyte"], y=df["Points across peak"], marker_color=np.where(
     df["Points across peak"] < acq.min_points_per_peak, style.SAFFRON, style.TEAL_LIGHT)))
 bar.add_hline(y=acq.min_points_per_peak, line_dash="dash", line_color=style.PALE)
-bar.update_layout(height=300, margin=dict(t=10, b=120), yaxis_title="Points across peak (4 sigma / cycle)",
+bar.update_layout(height=300, margin=dict(t=10, b=120), yaxis_title="Points across peak<br>(4 sigma / cycle)",
                   template="room")
 chart(bar, width="stretch")
 st.dataframe(df, hide_index=True, width="stretch", height=380)

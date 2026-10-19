@@ -600,7 +600,8 @@ else:
     qspec = qfig.to_dict()
     qspec["layout"].update(
         shapes=window_shapes(slot_tr[k0].precursor_mz) + rod_shapes,
-        title=dict(text=slot_title(k0), font=dict(size=12), x=0.22, xanchor="left", y=0.985, yanchor="top"),
+        # two-line title: yanchor "top" puts the first line's baseline at y, so 20 px down keeps it in
+        title=dict(text=slot_title(k0), font=dict(size=12), x=0.22, xanchor="left", y=1 - 20 / 660, yanchor="top"),
         height=660, margin=dict(t=100, b=60, l=10, r=10), barmode="overlay",
         legend=dict(orientation="h", y=-0.02, x=0, yanchor="top", font=dict(size=11)),
     )
